@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <title>jfsn.com | Websites</title>
+
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+<!-- Hotjar Tracking Code for Site 3646716 (name missing) -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3646716,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6366f1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+    <!-- Page loading styles -->
+    <style>
+        
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+}
+
+.gallery-grid figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+        
+        
+        
+        .page-loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: all .4s .2s ease-in-out;
+            transition: all .4s .2s ease-in-out;
+            background-color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+        }
+
+        [data-bs-theme="dark"] .page-loading {
+            background-color: #0b0f19;
+        }
+
+        .page-loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .page-loading-inner {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out;
+            opacity: 0;
+        }
+
+        .page-loading.active>.page-loading-inner {
+            opacity: 1;
+        }
+
+        .page-loading-inner>span {
+            display: block;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #9397ad;
+        }
+
+        [data-bs-theme="dark"] .page-loading-inner>span {
+            color: #fff;
+            opacity: .6;
+        }
+
+        .page-spinner {
+            display: inline-block;
+            width: 2.75rem;
+            height: 2.75rem;
+            margin-bottom: .75rem;
+            vertical-align: text-bottom;
+            border: .15em solid #b4b7c9;
+            border-right-color: transparent;
+            border-radius: 50%;
+            -webkit-animation: spinner .75s linear infinite;
+            animation: spinner .75s linear infinite;
+        }
+
+        [data-bs-theme="dark"] .page-spinner {
+            border-color: rgba(255, 255, 255, .4);
+            border-right-color: transparent;
+        }
+
+        @-webkit-keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        #portfolio {
+            scroll-margin-top: 75px;
+            /* Adjust the value as needed */
+        }
+
+        .top-aligned-images img {
+            vertical-align: top;
+        }
+
+        .row.mx-0 {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .col.px-0 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .img-fluid {
+            width: 100%;
+            height: auto;
+        }
+
+        #art {
+            scroll-margin-top: 50px;
+            /* Adjust the value as needed */
+        }
+
+/* Remove padding from columns */
+.row.mx-0 > .col.px-0 {
+    padding: 0;
+}
+
+/* Ensure images fill the column */
+.img-fluid {
+    width: 95%;
+    height: auto;
+    display: block;
+}
+
+/* Optional: If there's still space, check for margins on images */
+.img-fluid {
+    margin: 30;
+}
+     
+        
+        
+    </style>
+    <!-- Page loading scripts -->
+    <script>
+        (function() {
+            window.onload = function() {
+                const preloader = document.querySelector('.page-loading');
+                preloader.classList.remove('active');
+                setTimeout(function() {
+                    preloader.remove();
+                }, 1000);
+            };
+        })();
+
+    </script>
+</head>
+<!-- Body -->
+
+<body>
+
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+        <div class="page-loading-inner">
+            <div class="page-spinner"></div><span>Loading...</span>
+        </div>
+    </div>
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper position-relative zindex-2">
+        <!-- Navbar -->
+        <!-- Remove "fixed-top" class to make navigation bar scrollable with the page -->
+       <header class="header navbar navbar-expand-lg bg-light shadow-sm fixed-top pt-0 pb-0">         <div class="container px-3">
+                <a href="index.html" class="navbar-brand">
+                    <span>Jeffrey F. S. Neumann</span>
+                </a>
+                 
+              
+                </a>
+                <div id="navbarNav" class="offcanvas offcanvas-end">
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <!-- Navigation Links -->
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" aria="page">Misc.</a>
+                                <div class="dropdown-menu p-0">
+                                    <div class="d-lg-flex">
+                                        <div
+                                          class="mega-dropdown-column d-flex justify-content-center align-items-center rounded-3 rounded-end-0 px-0"
+                                          style="margin: -1px; background-color: #f3f6ff">
+                                          <picture>
+                                            <source srcset="assets/img/landings.webp" type="image/webp">
+                                            <img src="assets/img/landings.jpg" alt="Landings" />
+                                          </picture>
+                                        </div>
+                                        <div class="mega-dropdown-column pt-lg-3 pb-lg-4" style="--si-mega-dropdown-column-width: 12rem">
+                                          <ul class="list-unstyled mb-0">
+                                            <li><a href="about.html" class="dropdown-item">About Me</a></li>
+                                            <li><a href="websites.html" class="dropdown-item active">Design Archives</a></li>
+                                            <li><a href="Jeff%20Neumann%20Resume.pdf" class="dropdown-item">Resume</a></li>
+                                            <li>
+                                              <a
+                                                href="old/Mr_SNOWmann/index.html"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="dropdown-item"
+                                                >Mr_SNOWmann</a
+                                              >
+                                            </li>
+                                            <li><a href="#" class="dropdown-item"></a></li>
+
+                                            <li class="dropdown-item">
+                                              Sebastian&nbsp;
+                                              <a
+                                                href="old/sebastian%20V1/sebastian.html"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="text-decoration-none"
+                                                >V1</a
+                                              >
+                                              &nbsp;&amp;&nbsp;
+                                              <a
+                                                href="old/sebastian%20V2/index.html"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="text-decoration-none"
+                                                >V2</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="nav-item dropdown">
+                                    <a href="portfolio.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Portfolio</a>
+                                    <div class="dropdown-menu">
+                                      <div class="d-lg-flex pt-lg-3">
+                                        <div class="mega-dropdown-column">
+                                          <ul class="list-unstyled mb-3">
+                                            <li><a href="portfolio.html" class="dropdown-item">My Portfolio</a></li>
+
+                                            <li>
+                                              <a href="https://showspace.so/s/jeffrey-neumann-46" class="dropdown-item py-1" target="_blank"
+                                                >Projects<span class="badge bg-success ms-2">NEW</span></a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a href="https://5k1zspyjnguz.trickle.host" class="dropdown-item py-1" target="_blank"
+                                                >Brand Brain<span class="badge bg-success ms-2">NEW</span></a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a href="studies.html" class="nav-link">Case Study</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a href="ai.html" class="nav-link">AI/UX</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a href="contact.html" class="nav-link">Contact</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a href="design.html" class="nav-link">Design</a>
+                                  </li>
+                                </ul>
+                    </div>
+
+                </div>
+                <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label d-none d-sm-block" for="theme-mode">Light</label>
+                    <label class="form-check-label d-none d-sm-block" for="theme-mode">Dark</label>
+                </div>
+                <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+        </header>
+        <div class="bg pt-5">
+            <!-- Page title + Services grid -->
+            <section class="container-fluid pb-2 pb-md-4 pb-lg-5 mb-3 mt-3">
+              <h1 class="display-7 pb-0 mb-0 text-center">Design Archives</h1>
+                 <p class="fs-4 text-center mt-0">Some iterations of my website over the years</p>
+                <div class="row mx-0">
+                    <div class="col px-0">
+                  <img src="images/websites/jfsn2024.jpeg" alt="JFSN 2024" class="img-fluid mx-auto d-block shadow-lg website-image">
+<p class="text-center"><br>www.jfsn.com (2024)</p>
+
+                        <img src="images/websites/jfsn2021.jpg" class="img-fluid mx-auto d-block shadow-lg website-image"><p class="text-center"><br>www.jfsn.com (2023)</p>
+                        <img src="images/websites/art-studio-2.jpg" class="img-fluid mx-auto d-block shadow-lg website-image"><p class="text-center"><br>www.jfsn.com (2006)</p>
+                    </div>
+                    <div class="col px-0">
+                        <img src="images/websites/jfsn2023.jpg" class="img-fluid mx-auto d-block shadow-lg website-image">  <p class="text-center"><br>www.jfsn.com (2023)</p>
+                
+                    </div>
+                    <div class="col px-0">
+                        <img src="images/websites/jfsn2022.jpg" class="img-fluid mx-auto d-block shadow-lg website-image"><p class="text-center"><br>www.jfsn.com (2022)</p>
+                    </div>
+                    <div class="col px-0">
+                        <img src="images/websites/jfsn2019.jpg" class="img-fluid mx-auto d-block shadow-lg website-image">
+                        <img src="images/websites/fine-art-5.jpg" class="img-fluid mx-auto d-block shadow-lg website-image"><p class="text-center"><br>www.jfsn.com (2021)</p>
+                    </div>
+                    <div class="col px-0">
+                        <img src="images/websites/jfsn2018.jpg" class="img-fluid mx-auto d-block shadow website-image"><p class="text-center"><br>www.jfsn.com (2014)</p>
+                    </div>
+                    <div class="col px-0">
+                        <img src="images/websites/jfsn-2000.jpg" class="img-fluid mx-auto d-block shadow website-image"><p class="text-center"><br>www.jfsn.com (2009)</p>
+                    </div>
+                </div>
+            </section>
+   
+        
+    
+<section id="art" class="art-gallery">
+ 
+<!-- Modal Viewer -->
+<div id="modal-viewer" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
+  <span onclick="document.getElementById('modal-viewer').style.display='none'"
+        style="position:absolute; top:20px; right:30px; font-size:2rem; color:white; cursor:pointer;">&times;</span>
+  <img id="modal-image" src="" style="max-width:90%; max-height:90%; box-shadow:0 0 40px rgba(255,255,255,0.3);">
+</div>
+
+        
+        
+    <div class="container-fluid"> <!-- Use container-fluid for full width -->
+        <h1 class="pb-4 text-center pt-5">Fine Art Work</h1>
+        <div class="row mx">
+            <div class="col px-0">
+                <img src="images/websites/art.jpg">
+                <img src="images/websites/fine-art-2.jpg">
+                <img src="images/websites/fine-art-horzontal.jpg">
+                <img src="images/websites/Jean-Michel%20Basquiat+Leonardo%20da%20Vinci%20NFT-001A.jpg" >
+                
+            </div>
+        </div>
+      
+    </div>
+</section>
+
+        </div>
+
+
+  
+<!-- Social networks (Carousel on narrow screens) -->
+      <section class="container text-center py-5 my-2 my-md-4 my-lg-5">
+     
+  <div class="swiper" data-swiper-options='{
+      "slidesPerView": 2,
+      "spaceBetween": 30,
+      "pagination": {
+        "el": ".swiper-pagination",
+        "clickable": true
+      },
+      "breakpoints": {
+        "500": {
+          "slidesPerView": 3
+        },
+        "650": {
+          "slidesPerView": 3
+        },
+        "900": {
+          "slidesPerView": 4
+        },
+        "1100": {
+          "slidesPerView": 5
+        }
+      }
+    }'>
+          <div class="swiper-wrapper">
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+              <a href="https://www.facebook.com/jeffrey.neumann1/" class="btn btn-icon btn-secondary btn-facebook btn-lg stretched-link" aria-label="Facebook" target="_blank">
+  <i class="bx bxl-facebook"></i>
+</a>
+
+                <div class="pt-4">
+                  <h6 class="mb-1">Facebook</h6>
+                  <p class="fs-sm text-muted mb-0">jeffrey.neumann1</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+         <div class="swiper-slide">
+  <div class="position-relative text-center border-end mx-n1">
+    <a href="https://showspace.so/s/jeffrey-neumann-46" class="btn btn-icon btn-secondary btn-party btn-lg stretched-link" aria-label="party" target="_blank">
+      <i class="bx bx-party fs-3"></i>
+    </a>
+    <div class="pt-4">
+      <h6 class="mb-1">Showspace</h6>
+      <p class="fs-sm text-muted mb-0">@jeffrey-neumann-46</p>
+    </div>
+  </div>
+</div>
+
+
+          
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://www.linkedin.com/in/jeffreyneumann/" class="btn btn-icon btn-secondary btn-linkedin btn-lg stretched-link" aria-label="LinkedIn" target="_blank">
+                  <i class="bx bxl-linkedin"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">LinkedIn</h6>
+                  <p class="fs-sm text-muted mb-0">jeffreyneumann/</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://www.youtube.com/@jfsneumann/videos" class="btn btn-icon btn-secondary btn-youtube btn-lg stretched-link" aria-label="Twitter" target="_blank">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">YouTube</h6>
+                  <p class="fs-sm text-muted mb-0">@jfsneumann/videos</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://dribbble.com/JFSN" class="btn btn-icon btn-secondary btn-dribbble btn-lg stretched-link" aria-label="Dribbble" target="_blank">
+                  <i class="bx bxl-dribbble"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">Dribbble</h6>
+                  <p class="fs-sm text-muted mb-0">JFSN</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination (bullets) -->
+          <div class="swiper-pagination position-relative bottom-0 pt-3 mt-4"></div>
+        </div>
+      </section>
+    <!-- Down Load Resume -->
+     
+  
+    
+
+     <!-- Footer -->
+    <footer class="footer bg-dark pt-5 pb-4 pb-lg-5" data-bs-theme="dark">
+        <div class="container pt-lg-4">
+             <p class="nav d-block fs-xs text-center  pb-2 pb-lg-0 mb-0"><span class="text-light opacity-50">&copy; All rights reserved. Portfolio of</span>
+                <img alt="JFSN" src="assets/img/me-for-website.png" width="67">
+                <a class="nav-link d-inline-block p-0" href="http://www.jfsn.com/" rel="noopener" target="_blank">Jeffrey Francis Stanley Neumann</a>
+            </p>
+        </div>
+    </footer>        <!-- Back to top button -->
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+        <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+        <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+    
+    
+    <script>
+  document.querySelectorAll('.modal-trigger').forEach(el => {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('modal-image').src = this.href;
+      document.getElementById('modal-viewer').style.display = 'flex';
+    });
+  });
+
+  document.getElementById('modal-viewer').addEventListener('click', function(e) {
+    if (e.target === this) this.style.display = 'none';
+  });
+</script>
+
+    
+</body>
+
+</html>

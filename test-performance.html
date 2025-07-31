@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .metric {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #007cba;
+        }
+        .success { border-left-color: #28a745; }
+        .warning { border-left-color: #ffc107; }
+        .error { border-left-color: #dc3545; }
+        .test-button {
+            background: #007cba;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .test-button:hover {
+            background: #005a87;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Website Performance Test</h1>
+    <p>Testing the performance optimizations implemented on your website.</p>
+    
+    <button class="test-button" onclick="testMainSite()">Test Main Site Performance</button>
+    <button class="test-button" onclick="testFileSizes()">Check File Sizes</button>
+    <button class="test-button" onclick="testImageOptimization()">Test Image Optimization</button>
+    
+    <div id="results"></div>
+
+    <script>
+        function addResult(title, content, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `metric ${type}`;
+            div.innerHTML = `<h3>${title}</h3><p>${content}</p>`;
+            results.appendChild(div);
+        }
+
+        async function testMainSite() {
+            addResult('Testing Main Site', 'Loading...', 'info');
+            
+            const startTime = performance.now();
+            
+            try {
+                const response = await fetch('http://localhost:8000');
+                const loadTime = performance.now() - startTime;
+                
+                if (response.ok) {
+                    addResult('Main Site Load Test', 
+                        `✅ Site loaded successfully in ${loadTime.toFixed(2)}ms<br>
+                         Status: ${response.status} ${response.statusText}<br>
+                         Content-Type: ${response.headers.get('content-type')}`, 'success');
+                } else {
+                    addResult('Main Site Load Test', 
+                        `❌ Site failed to load<br>
+                         Status: ${response.status} ${response.statusText}`, 'error');
+                }
+            } catch (error) {
+                addResult('Main Site Load Test', 
+                    `❌ Error loading site: ${error.message}`, 'error');
+            }
+        }
+
+        async function testFileSizes() {
+            addResult('File Size Analysis', 'Checking optimized files...', 'info');
+            
+            const files = [
+                { name: 'Original theme.min.css', path: 'assets/css/theme.min.css' },
+                { name: 'Optimized performance-optimized.css', path: 'assets/css/performance-optimized.css' },
+                { name: 'Original theme.min.js', path: 'assets/js/theme.min.js' },
+                { name: 'Performance loader', path: 'assets/js/performance-loader.js' }
+            ];
+            
+            let results = '';
+            
+            for (const file of files) {
+                try {
+                    const response = await fetch(`http://localhost:8000/${file.path}`);
+                    if (response.ok) {
+                        const content = await response.text();
+                        const sizeKB = (content.length / 1024).toFixed(1);
+                        results += `<strong>${file.name}:</strong> ${sizeKB} KB<br>`;
+                    }
+                } catch (error) {
+                    results += `<strong>${file.name}:</strong> Error loading<br>`;
+                }
+            }
+            
+            addResult('File Size Comparison', results, 'success');
+        }
+
+        async function testImageOptimization() {
+            addResult('Image Optimization Test', 'Testing image loading...', 'info');
+            
+            const testImages = [
+                'assets/img/me-for-website-400.webp',
+                'web/art1010-hero-400.webp',
+                'web/art1010-hero-800.webp'
+            ];
+            
+            let results = '';
+            
+            for (const image of testImages) {
+                try {
+                    const response = await fetch(`http://localhost:8000/${image}`);
+                    if (response.ok) {
+                        const size = response.headers.get('content-length');
+                        const sizeKB = size ? (size / 1024).toFixed(1) : 'Unknown';
+                        results += `<strong>${image}:</strong> ✅ Loaded (${sizeKB} KB)<br>`;
+                    } else {
+                        results += `<strong>${image}:</strong> ❌ Failed (${response.status})<br>`;
+                    }
+                } catch (error) {
+                    results += `<strong>${image}:</strong> ❌ Error: ${error.message}<br>`;
+                }
+            }
+            
+            addResult('Image Optimization Results', results, 'success');
+        }
+
+        // Auto-run basic tests on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                testFileSizes();
+                testImageOptimization();
+            }, 1000);
+        });
+    </script>
+</body>
+</html> 

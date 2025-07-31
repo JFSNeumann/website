@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <title>jfsn.com | Fine Art Gallery</title>
+    <meta name="description" content="Explore Jeffrey F. S. Neumann's fine art gallery featuring contemporary artwork, mixed media pieces, and artistic expressions spanning decades of creative exploration.">
+    
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Resource hints for better performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="//cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.js" as="script">
+    <link rel="preload" href="assets/js/theme.min.js" as="script">
+    
+    <!-- Preload critical hero images for faster LCP -->
+    <link rel="preload" href="web/art1010-hero-400.webp" as="image" type="image/webp">
+    
+    <!-- Add responsive image loading hints - only preload existing files -->
+    <link rel="preload" href="web/art1010-hero-800.webp" as="image" type="image/webp" media="(min-width: 768px)">
+    
+    <!-- Critical CSS first - load immediately for above-the-fold content -->
+    <link rel="stylesheet" href="assets/css/critical-essential.css">
+    <!-- Fallback to original critical CSS if needed -->
+    <link rel="stylesheet" href="critical-optimized.css">
+    
+    <!-- Performance optimized CSS -->
+    <link rel="preload" href="assets/css/performance-optimized.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/art-gallery-clean.min.css?v=13" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/art-gallery.css?v=6" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/theme.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6366f1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="robots" content="index, follow">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Jeffrey Neumann Art Gallery">
+
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link rel="preload" href="assets/vendor/boxicons/css/boxicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="creative-gallery-effects.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Font Awesome loaded asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Add font-display: swap to critical CSS -->
+    <style>
+        @font-face {
+            font-family: 'Font Awesome 6 Free';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
+        }
+    </style>
+    
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link rel="stylesheet" href="assets/css/performance-optimized.css">
+        <link rel="stylesheet" href="assets/css/art-gallery-clean.min.css?v=13">
+        <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    </noscript>
+    
+
+    
+    <!-- FINAL HEART HOVER EFFECTS - LOADED LAST TO OVERRIDE EVERYTHING -->
+    <style>
+        /* INLINE HEART HOVER EFFECTS - FORCE LOAD */
+        .favorite-btn {
+            position: absolute !important;
+            top: 16px !important;
+            right: 16px !important;
+            background: rgba(255, 255, 255, 0.95) !important;
+            border: none !important;
+            border-radius: 50% !important;
+            width: 44px !important;
+            height: 44px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            z-index: 3 !important;
+            backdrop-filter: blur(15px) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+            font-size: 1.1rem !important;
+            opacity: 1 !important;
+            transform-origin: center !important;
+        }
+        
+        .favorite-btn i {
+            color: #e74c3c !important;
+            font-weight: 900 !important;
+            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+        
+        .favorite-btn:hover {
+            transform: scale(1.2) rotate(5deg) !important;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 6px 15px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(255, 255, 255, 0.4) !important;
+            background: #e74c3c !important;
+            background-color: #e74c3c !important;
+        }
+        
+        .favorite-btn:hover i {
+            color: white !important;
+        }
+        
+        .favorite-btn.active {
+            background: #e74c3c !important;
+            background-color: #e74c3c !important;
+            animation: heartBeat 0.6s ease-in-out !important;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 6px 15px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(255, 255, 255, 0.4) !important;
+        }
+        
+        .favorite-btn.active i {
+            color: white !important;
+            font-weight: 900 !important;
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% { 
+                transform: scale(1); 
+            }
+            50% { 
+                transform: scale(1.3); 
+            }
+        }
+        
+        .gallery-item:hover .favorite-btn {
+            opacity: 1 !important;
+        }
+    </style>
+    
+    <!-- Performance loader - load first for optimized script management -->
+    <script src="assets/js/performance-loader.js"></script>
+    
+    <!-- Performance monitor - track loading times -->
+    <script src="assets/js/performance-monitor.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+    
+    <!-- Image optimization - load first for better performance -->
+    <script src="assets/js/image-optimizer.js" defer></script>
+    
+    <!-- Critical scripts loaded immediately -->
+    <script>
+        // Initialize performance loader and load critical scripts
+        function initializePerformanceLoader() {
+            console.log('Initializing performance loader...');
+            if (window.performanceLoader) {
+                console.log('Performance loader found, loading scripts...');
+                // Load critical scripts first
+                window.performanceLoader.loadCritical('assets/js/art-gallery-random.min.js');
+                window.performanceLoader.loadCritical('assets/js/art-gallery-core.js');
+                
+                // Load non-critical scripts with priority - ensure proper order
+                window.performanceLoader.loadNonCritical('assets/js/art-gallery-ui.js', 'high');
+                window.performanceLoader.loadNonCritical('assets/js/art-gallery-modals.min.js', 'high');
+                
+                // Load performance script first, then main gallery
+                window.performanceLoader.loadScript('assets/js/art-gallery-performance.js').then(() => {
+                    window.performanceLoader.loadNonCritical('assets/js/art-gallery-main.min.js', 'normal');
+                });
+                
+                // Load scripts when needed - with better conditions
+                window.performanceLoader.loadWhenNeeded('assets/js/art-gallery-performance.js', () => {
+                    return document.querySelector('.gallery-container') !== null && document.body && document.body.scrollHeight > 0;
+                });
+                
+                window.performanceLoader.loadWhenNeeded('assets/js/loading-states.js', () => {
+                    return document.querySelector('.page-loading') !== null;
+                });
+                
+                window.performanceLoader.loadWhenNeeded('assets/js/scroll-animations.js', () => {
+                    return document.body && document.body.scrollHeight > window.innerHeight;
+                });
+                
+                window.performanceLoader.loadWhenNeeded('assets/js/floating-labels.js', () => {
+                    return document.querySelector('.form-floating') !== null;
+                });
+                
+                window.performanceLoader.loadWhenNeeded('assets/js/theme-switcher.js', () => {
+                    return document.querySelector('[data-bs-theme]') !== null;
+                });
+            } else {
+                // Fallback: load scripts directly if performance loader isn't available
+                console.log('Performance loader not available, loading scripts directly');
+                loadScriptsDirectly();
+            }
+        }
+        
+        function loadScriptsDirectly() {
+            const scripts = [
+                'assets/js/art-gallery-random.min.js',
+                'assets/js/art-gallery-core.js',
+                'assets/js/art-gallery-ui.js',
+                'assets/js/art-gallery-modals.min.js',
+                'assets/js/art-gallery-performance.js',
+                'assets/js/art-gallery-main.min.js'
+            ];
+            
+            // Load scripts sequentially to ensure proper dependencies
+            let currentIndex = 0;
+            function loadNextScript() {
+                if (currentIndex < scripts.length) {
+                    const script = scripts[currentIndex];
+                    const scriptEl = document.createElement('script');
+                    scriptEl.src = script;
+                    scriptEl.onload = () => {
+                        currentIndex++;
+                        loadNextScript();
+                    };
+                    scriptEl.onerror = () => {
+                        console.warn(`Failed to load ${script}, continuing...`);
+                        currentIndex++;
+                        loadNextScript();
+                    };
+                    document.head.appendChild(scriptEl);
+                }
+            }
+            loadNextScript();
+            
+            // Scripts are now loaded sequentially above
+        }
+        
+        // Initialize performance loader only after DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                initializePerformanceLoader();
+            } catch (error) {
+                console.error('Error initializing performance loader:', error);
+                // Fallback to direct script loading
+                loadScriptsDirectly();
+            }
+        });
+        
+        // Also try after a short delay as fallback
+        setTimeout(function() {
+            if (!window.performanceLoader) {
+                try {
+                    initializePerformanceLoader();
+                } catch (error) {
+                    console.error('Error initializing performance loader (delayed):', error);
+                    loadScriptsDirectly();
+                }
+            }
+        }, 100);
+    </script>
+    
+
+    
+
+    
+
+
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+        /* Critical loading styles only */
+        .page-loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 0.4s 0.2s ease-in-out;
+            background-color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+        }
+
+        [data-bs-theme="dark"] .page-loading {
+            background-color: #0b0f19;
+        }
+
+        .page-loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .page-loading-inner {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            transform: translateY(-50%);
+            transition: opacity 0.2s ease-in-out;
+            opacity: 0;
+        }
+
+        .page-loading.active > .page-loading-inner {
+            opacity: 1;
+        }
+
+        .page-loading-inner > span {
+            display: block;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #9397ad;
+        }
+
+        [data-bs-theme="dark"] .page-loading-inner > span {
+            color: #fff;
+            opacity: 0.6;
+        }
+
+        .page-spinner {
+            display: inline-block;
+            width: 2.75rem;
+            height: 2.75rem;
+            margin-bottom: 0.75rem;
+            vertical-align: text-bottom;
+            border: 0.15em solid #b4b7c9;
+            border-right-color: transparent;
+            border-radius: 50%;
+            animation: spinner 0.75s linear infinite;
+        }
+
+        [data-bs-theme="dark"] .page-spinner {
+            border-color: rgba(255, 255, 255, 0.4);
+            border-right-color: transparent;
+        }
+
+        @keyframes spinner {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Hide unwanted sections by default */
+        .timeline-modal,
+        #timelineModal,
+        section.container-fluid:has(h1:contains("Fine Art Work")),
+        section.container-fluid img[src*="websites/"],
+        section.container.text-center.py-5 {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            position: absolute !important;
+            left: -9999px !important;
+            z-index: -1 !important;
+        }
+        
+        /* Enhanced hero centering and circlefade effects */
+        .hero-content {
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            text-align: center !important;
+            color: white !important;
+            z-index: 10 !important;
+            width: 90% !important;
+            max-width: 800px !important;
+            pointer-events: auto !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+        
+        .hero-text {
+            opacity: 1 !important;
+            visibility: visible !important;
+            text-align: center !important;
+            width: 100% !important;
+            max-width: 600px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        .hero-title {
+            opacity: 0.95 !important;
+            visibility: visible !important;
+            color: white !important;
+            text-align: center !important;
+            margin: 0 0 1rem 0 !important;
+            font-size: clamp(3rem, 7.5vw, 5.25rem) !important;
+            font-weight: 700 !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+            width: 100% !important;
+        }
+        
+        .hero-description {
+            opacity: 1 !important;
+            visibility: visible !important;
+            color: white !important;
+            text-align: center !important;
+            margin: 0 0 2rem 0 !important;
+            max-width: 600px !important;
+            font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important;
+            font-weight: 400 !important;
+            width: 100% !important;
+        }
+        
+        .hero-actions {
+            opacity: 1 !important;
+            visibility: visible !important;
+            text-align: center !important;
+            margin: 0 !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+        
+        /* Circlefade effect for hero content */
+        .text-reveal {
+            animation: circlefade 1.5s ease-out forwards;
+        }
+        
+        @keyframes circlefade {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(0.95) translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        /* Enhanced button centering */
+        .hero-actions .btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            margin: 0 auto !important;
+        }
+        
+        /* Force circlefade animation on text-reveal elements */
+        .text-reveal {
+            animation: circlefade 1.5s ease-out forwards !important;
+        }
+        
+        .hero-title {
+            animation: circlefade 1.5s ease-out forwards !important;
+        }
+        
+        .hero-description {
+            animation: circlefade 1.5s ease-out 0.3s forwards !important;
+        }
+        
+        .hero-actions {
+            animation: circlefade 1.5s ease-out 0.6s forwards !important;
+        }
+        
+        /* Skeleton loading states */
+        .skeleton-card {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .skeleton-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+        
+        .skeleton-text {
+            height: 16px;
+            margin: 8px 0;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 4px;
+        }
+        
+        .skeleton-title {
+            height: 20px;
+            width: 70%;
+            margin: 8px 0;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 4px;
+        }
+        
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Enhanced mobile animations */
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        /* Mobile-specific animations */
+        @media (max-width: 768px) {
+            .gallery-item {
+                animation: fadeInScale 0.3s ease-out;
+            }
+            
+            .filter-btn:active {
+                animation: pulse 0.2s ease-in-out;
+            }
+            
+            .mobile-bottom-nav {
+                animation: slideInUp 0.3s ease-out;
+            }
+            
+            .fab-container {
+                animation: fadeInScale 0.3s ease-out;
+            }
+        }
+        
+        /* Desktop masonry layout */
+        @media (min-width: 769px) {
+            .gallery-grid-masonry {
+                column-count: 3;
+                column-gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .gallery-item-masonry {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+                display: block;
+                page-break-inside: avoid;
+            }
+            
+            .gallery-item-masonry img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 8px;
+                transition: transform 0.3s ease, filter 0.3s ease;
+            }
+            
+            .gallery-item-masonry:hover img {
+                transform: scale(1.02);
+                filter: brightness(1.1);
+            }
+        }
+        
+        /* Progressive image loading styles */
+        .progressive-image {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progressive-image img {
+            transition: filter 0.5s ease;
+        }
+        
+        .progressive-image img.loading {
+            filter: blur(10px);
+        }
+        
+        .progressive-image img.loaded {
+            filter: blur(0);
+        }
+        
+        /* Keyboard focus indicator */
+        .keyboard-focused {
+            outline: 3px solid #007bff !important;
+            outline-offset: 2px !important;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3) !important;
+        }
+        
+        /* Hide hero navigation buttons and scroll indicator on mobile */
+        @media (max-width: 768px) {
+            .hero-controls {
+                display: none !important;
+            }
+            
+            .scroll-indicator {
+                display: none !important;
+            }
+            
+            /* Reduce filter bar vertical space on mobile */
+            .filter-section {
+                padding-top: 0.25rem !important;
+                padding-bottom: 0.25rem !important;
+                margin-top: 0 !important;
+            }
+            
+            .filter-section .container-fluid {
+                padding-top: 0.25rem !important;
+                padding-bottom: 0.25rem !important;
+            }
+            
+            .filter-section .py-4 {
+                padding-top: 0.25rem !important;
+                padding-bottom: 0.25rem !important;
+            }
+            
+            /* Make filter buttons smaller on mobile */
+            .filter-btn {
+                padding: 0.2rem 0.4rem !important;
+                font-size: 0.8rem !important;
+                margin: 0.1rem !important;
+                min-height: 44px !important;
+                min-width: 44px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            /* Ensure all interactive elements meet touch target requirements */
+            .gallery-item {
+                min-height: 44px !important;
+                min-width: 44px !important;
+            }
+            
+            .btn, .favorite-btn, .overlay-btn {
+                min-height: 44px !important;
+                min-width: 44px !important;
+                touch-action: manipulation !important;
+            }
+            
+            /* Reduce gap between nav and filter bar */
+            .navbar {
+                margin-bottom: 0 !important;
+            }
+            
+            .hero-section {
+                margin-bottom: 0 !important;
+            }
+            
+            /* Tighten overall spacing */
+            .filter-section {
+                top: 45px !important;
+            }
+        }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+        (function() {
+            // Hide loading state when page is ready
+            function hideLoading() {
+                const preloader = document.querySelector('.page-loading');
+                if (preloader) {
+                    preloader.classList.remove('active');
+                    setTimeout(function() {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }
+            }
+            
+            // Hide loading on window load
+            window.onload = hideLoading;
+            
+            // Also hide loading after a timeout as fallback
+            setTimeout(hideLoading, 3000);
+            
+            // Hide loading when DOM is ready and scripts are loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(hideLoading, 1000);
+            });
+        })();
+        
+        // Mobile swipe gestures for gallery navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            let startX = 0;
+            let startY = 0;
+            let endX = 0;
+            let endY = 0;
+            const minSwipeDistance = 50;
+            
+            // Gallery swipe navigation
+            const galleryGrid = document.getElementById('gallery-grid');
+            if (galleryGrid) {
+                galleryGrid.addEventListener('touchstart', function(e) {
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                }, { passive: true });
+                
+                galleryGrid.addEventListener('touchend', function(e) {
+                    endX = e.changedTouches[0].clientX;
+                    endY = e.changedTouches[0].clientY;
+                    
+                    const deltaX = endX - startX;
+                    const deltaY = endY - startY;
+                    
+                    // Check if it's a horizontal swipe
+                    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+                        if (deltaX > 0) {
+                            // Swipe right - previous filter
+                            navigateFilter(-1);
+                        } else {
+                            // Swipe left - next filter
+                            navigateFilter(1);
+                        }
+                    }
+                }, { passive: true });
+            }
+            
+            // Filter navigation function
+            function navigateFilter(direction) {
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const activeButton = document.querySelector('.filter-btn.active');
+                
+                if (activeButton && filterButtons.length > 0) {
+                    const currentIndex = Array.from(filterButtons).indexOf(activeButton);
+                    const newIndex = (currentIndex + direction + filterButtons.length) % filterButtons.length;
+                    
+                    // Trigger click on the new filter button
+                    filterButtons[newIndex].click();
+                    
+                    // Add haptic feedback if supported
+                    if (navigator.vibrate) {
+                        navigator.vibrate(10);
+                    }
+                }
+            }
+            
+            // Add haptic feedback for button presses
+            document.addEventListener('touchstart', function(e) {
+                if (e.target.matches('.filter-btn, .btn, .gallery-item')) {
+                    if (navigator.vibrate) {
+                        navigator.vibrate(5);
+                    }
+                }
+            }, { passive: true });
+            
+            // Pull-to-refresh functionality
+            let pullStartY = 0;
+            let pullCurrentY = 0;
+            let pullDistance = 0;
+            let isPulling = false;
+            const pullThreshold = 80;
+            
+            const pullIndicator = document.createElement('div');
+            pullIndicator.innerHTML = `
+                <div style="text-align: center; padding: 1rem; color: #666;">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <div>Pull to refresh</div>
+                </div>
+            `;
+            pullIndicator.style.cssText = `
+                position: fixed;
+                top: -60px;
+                left: 0;
+                right: 0;
+                height: 60px;
+                background: rgba(255,255,255,0.95);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                z-index: 9999;
+                transition: top 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            document.body.appendChild(pullIndicator);
+            
+            document.addEventListener('touchstart', function(e) {
+                if (window.scrollY === 0) {
+                    startY = e.touches[0].clientY;
+                    isPulling = false;
+                }
+            }, { passive: true });
+            
+            document.addEventListener('touchmove', function(e) {
+                if (window.scrollY === 0 && startY > 0) {
+                    currentY = e.touches[0].clientY;
+                    pullDistance = currentY - startY;
+                    
+                    if (pullDistance > 0 && pullDistance > 20) {
+                        isPulling = true;
+                        const indicatorTop = Math.min(pullDistance - 60, 0);
+                        pullIndicator.style.top = indicatorTop + 'px';
+                        
+                        if (pullDistance > pullThreshold) {
+                            pullIndicator.innerHTML = `
+                                <div style="text-align: center; padding: 1rem; color: #007bff;">
+                                    <i class="fas fa-arrow-down"></i>
+                                    <div>Release to refresh</div>
+                                </div>
+                            `;
+                        } else {
+                            pullIndicator.innerHTML = `
+                                <div style="text-align: center; padding: 1rem; color: #666;">
+                                    <i class="fas fa-arrow-down"></i>
+                                    <div>Pull to refresh</div>
+                                </div>
+                            `;
+                        }
+                        
+                        e.preventDefault();
+                    }
+                }
+            }, { passive: false });
+            
+            document.addEventListener('touchend', function(e) {
+                if (isPulling) {
+                    if (pullDistance > pullThreshold) {
+                        // Trigger refresh
+                        pullIndicator.innerHTML = `
+                            <div style="text-align: center; padding: 1rem; color: #007bff;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <div>Refreshing...</div>
+                            </div>
+                        `;
+                        
+                        // Simulate refresh
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1000);
+                    } else {
+                        // Reset indicator
+                        pullIndicator.style.top = '-60px';
+                    }
+                }
+                
+                startY = 0;
+                isPulling = false;
+                pullDistance = 0;
+            }, { passive: true });
+            
+            // Bottom navigation functions
+            window.scrollToTop = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (navigator.vibrate) navigator.vibrate(10);
+            };
+            
+            window.toggleFavorites = function() {
+                // Trigger favorites filter
+                const favoritesBtn = document.querySelector('[data-filter="favorites"]');
+                if (favoritesBtn) {
+                    favoritesBtn.click();
+                }
+                if (navigator.vibrate) navigator.vibrate(10);
+            };
+            
+            window.toggleMenu = function() {
+                // Toggle mobile menu (if exists) or show filter options
+                const filterSection = document.querySelector('.filter-section');
+                if (filterSection) {
+                    filterSection.style.display = filterSection.style.display === 'none' ? 'block' : 'none';
+                }
+                if (navigator.vibrate) navigator.vibrate(10);
+            };
+            
+            // FAB functions
+            window.toggleFabMenu = function() {
+                const fabMenu = document.querySelector('.fab-menu');
+                if (fabMenu) {
+                    const isVisible = fabMenu.style.display === 'flex';
+                    fabMenu.style.display = isVisible ? 'none' : 'flex';
+                    
+                    // Add rotation animation to main FAB button
+                    const fabButton = document.querySelector('.fab-container .btn-primary i');
+                    if (fabButton) {
+                        fabButton.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(45deg)';
+                        fabButton.style.transition = 'transform 0.3s ease';
+                    }
+                    
+                    if (navigator.vibrate) navigator.vibrate(10);
+                }
+            };
+            
+            window.shareGallery = function() {
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Jeffrey F. S. Neumann - Fine Art Gallery',
+                        text: 'Check out this amazing art gallery!',
+                        url: window.location.href
+                    });
+                } else {
+                    // Fallback: copy URL to clipboard
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('Gallery URL copied to clipboard!');
+                }
+                if (navigator.vibrate) navigator.vibrate(10);
+            };
+            
+            window.toggleViewMode = function() {
+                // Toggle between grid and list view
+                const galleryGrid = document.getElementById('gallery-grid');
+                if (galleryGrid) {
+                    const isGrid = galleryGrid.classList.contains('row');
+                    if (isGrid) {
+                        galleryGrid.classList.remove('row');
+                        galleryGrid.classList.add('list-view');
+                        galleryGrid.style.flexDirection = 'column';
+                    } else {
+                        galleryGrid.classList.add('row');
+                        galleryGrid.classList.remove('list-view');
+                        galleryGrid.style.flexDirection = '';
+                    }
+                }
+                if (navigator.vibrate) navigator.vibrate(10);
+            };
+            
+            // Auto-hide FAB menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.fab-container')) {
+                    const fabMenu = document.querySelector('.fab-menu');
+                    if (fabMenu && fabMenu.style.display === 'flex') {
+                        fabMenu.style.display = 'none';
+                        const fabButton = document.querySelector('.fab-container .btn-primary i');
+                        if (fabButton) {
+                            fabButton.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                }
+            });
+            
+            // Enhanced keyboard navigation for desktop
+            document.addEventListener('keydown', function(e) {
+                // Only enable on desktop
+                if (window.innerWidth > 768) {
+                    switch(e.key) {
+                        case 'ArrowLeft':
+                            e.preventDefault();
+                            navigateGallery(-1);
+                            break;
+                        case 'ArrowRight':
+                            e.preventDefault();
+                            navigateGallery(1);
+                            break;
+                        case ' ':
+                            e.preventDefault();
+                            toggleFullscreen();
+                            break;
+                        case 'Escape':
+                            closeLightbox();
+                            break;
+                        case 'f':
+                        case 'F':
+                            e.preventDefault();
+                            toggleFavorites();
+                            break;
+                        case 'h':
+                        case 'H':
+                            e.preventDefault();
+                            scrollToTop();
+                            break;
+                    }
+                }
+            });
+            
+            // Gallery navigation function
+            function navigateGallery(direction) {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                const currentIndex = Array.from(galleryItems).findIndex(item => 
+                    item.classList.contains('active') || item === document.activeElement
+                );
+                
+                if (currentIndex !== -1) {
+                    const newIndex = (currentIndex + direction + galleryItems.length) % galleryItems.length;
+                    const targetItem = galleryItems[newIndex];
+                    
+                    // Focus and highlight the target item
+                    targetItem.focus();
+                    targetItem.classList.add('keyboard-focused');
+                    
+                    // Scroll into view
+                    targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Remove focus class after animation
+                    setTimeout(() => {
+                        targetItem.classList.remove('keyboard-focused');
+                    }, 2000);
+                }
+            }
+            
+            // Fullscreen toggle
+            function toggleFullscreen() {
+                const galleryGrid = document.getElementById('gallery-grid');
+                if (galleryGrid) {
+                    if (!document.fullscreenElement) {
+                        galleryGrid.requestFullscreen();
+                    } else {
+                        document.exitFullscreen();
+                    }
+                }
+            }
+            
+            // Enhanced lightbox close
+            function closeLightbox() {
+                const modal = document.querySelector('.modal.show');
+                if (modal) {
+                    const closeBtn = modal.querySelector('.btn-close');
+                    if (closeBtn) closeBtn.click();
+                }
+                
+                // Exit fullscreen if active
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                }
+            }
+            
+            // Virtual scrolling for large galleries
+            let virtualScrollEnabled = false;
+            const virtualScrollThreshold = 1000; // Enable for galleries with 1000+ items
+            
+            function initVirtualScroll() {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                if (galleryItems.length > virtualScrollThreshold) {
+                    virtualScrollEnabled = true;
+                    console.log('Virtual scrolling enabled for large gallery');
+                    
+                    // Implement virtual scrolling logic
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                // Load high-res image when item comes into view
+                                const img = entry.target.querySelector('img[data-src]');
+                                if (img && !img.src.includes('web/')) {
+                                    img.src = img.dataset.src;
+                                    img.classList.remove('loading');
+                                    img.classList.add('loaded');
+                                }
+                            }
+                        });
+                    }, { rootMargin: '100px' });
+                    
+                    galleryItems.forEach(item => observer.observe(item));
+                }
+            }
+            
+            // Progressive image loading with blur-to-sharp
+            function initProgressiveLoading() {
+                const images = document.querySelectorAll('img[data-src]');
+                images.forEach(img => {
+                    // Start with blur effect
+                    img.classList.add('loading');
+                    
+                    // Load low-res first, then high-res
+                    const lowResSrc = img.dataset.lowRes || img.dataset.src;
+                    const highResSrc = img.dataset.src;
+                    
+                    if (lowResSrc) {
+                        img.src = lowResSrc;
+                    }
+                    
+                    // Load high-res image
+                    const highResImg = new Image();
+                    highResImg.onload = function() {
+                        img.src = highResSrc;
+                        img.classList.remove('loading');
+                        img.classList.add('loaded');
+                    };
+                    highResImg.src = highResSrc;
+                });
+            }
+            
+            // Preload next/previous images in lightbox
+            let preloadedImages = new Set();
+            
+            function preloadAdjacentImages(currentIndex) {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                const preloadRange = 2; // Preload 2 images on each side
+                
+                for (let i = Math.max(0, currentIndex - preloadRange); 
+                     i <= Math.min(galleryItems.length - 1, currentIndex + preloadRange); 
+                     i++) {
+                    const item = galleryItems[i];
+                    const img = item.querySelector('img[data-src]');
+                    if (img && !preloadedImages.has(img.dataset.src)) {
+                        const preloadImg = new Image();
+                        preloadImg.src = img.dataset.src;
+                        preloadedImages.add(img.dataset.src);
+                    }
+                }
+            }
+            
+            // Initialize advanced features on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                initVirtualScroll();
+                initProgressiveLoading();
+                initRelatedArtworks();
+                initSlideshowMode();
+            });
+            
+            // Related artworks suggestions
+            function initRelatedArtworks() {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        showRelatedArtworks(this);
+                    });
+                });
+            }
+            
+            function showRelatedArtworks(currentItem) {
+                const currentCategory = currentItem.dataset.category;
+                const currentYear = currentItem.dataset.year;
+                
+                // Find related artworks (same category or year)
+                const relatedItems = Array.from(document.querySelectorAll('.gallery-item')).filter(item => 
+                    (item.dataset.category === currentCategory || item.dataset.year === currentYear) && 
+                    item !== currentItem
+                ).slice(0, 6); // Show max 6 related items
+                
+                if (relatedItems.length > 0) {
+                    // Create related artworks panel
+                    const panel = document.createElement('div');
+                    panel.className = 'related-artworks-panel';
+                    panel.innerHTML = `
+                        <div class="related-header">
+                            <h4>Related Artworks</h4>
+                            <button class="btn-close" onclick="this.parentElement.parentElement.remove()">×</button>
+                        </div>
+                        <div class="related-grid">
+                            ${relatedItems.map(item => `
+                                <div class="related-item" onclick="openModal('${item.dataset.src}', '${item.dataset.title}', '${item.dataset.year}', '${item.dataset.category}')">
+                                    <img src="${item.dataset.thumbSrc}" alt="${item.dataset.title}">
+                                    <div class="related-title">${item.dataset.title}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    
+                    // Add styles
+                    panel.style.cssText = `
+                        position: fixed;
+                        bottom: 20px;
+                        right: 20px;
+                        width: 300px;
+                        max-height: 400px;
+                        background: rgba(255,255,255,0.95);
+                        backdrop-filter: blur(10px);
+                        border-radius: 12px;
+                        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                        z-index: 1000;
+                        overflow: hidden;
+                    `;
+                    
+                    document.body.appendChild(panel);
+                    
+                    // Auto-remove after 10 seconds
+                    setTimeout(() => {
+                        if (panel.parentNode) panel.remove();
+                    }, 10000);
+                }
+            }
+            
+            // Slideshow mode with auto-advance
+            let slideshowInterval = null;
+            let slideshowActive = false;
+            
+            function initSlideshowMode() {
+                // Add slideshow button to FAB menu
+                const fabMenu = document.querySelector('.fab-menu');
+                if (fabMenu) {
+                    const slideshowBtn = document.createElement('button');
+                    slideshowBtn.className = 'btn btn-light rounded-circle shadow';
+                    slideshowBtn.style.cssText = 'width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;';
+                    slideshowBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    slideshowBtn.onclick = toggleSlideshow;
+                    fabMenu.appendChild(slideshowBtn);
+                }
+            }
+            
+            function toggleSlideshow() {
+                if (slideshowActive) {
+                    stopSlideshow();
+                } else {
+                    startSlideshow();
+                }
+            }
+            
+            function startSlideshow() {
+                slideshowActive = true;
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                let currentIndex = 0;
+                
+                // Update button icon
+                const slideshowBtn = document.querySelector('.fab-menu .btn-light:last-child i');
+                if (slideshowBtn) {
+                    slideshowBtn.className = 'fas fa-pause';
+                }
+                
+                slideshowInterval = setInterval(() => {
+                    if (currentIndex >= galleryItems.length) {
+                        currentIndex = 0;
+                    }
+                    
+                    const item = galleryItems[currentIndex];
+                    if (item) {
+                        // Open modal for current item
+                        const img = item.querySelector('img');
+                        const title = item.dataset.title || 'Artwork';
+                        const year = item.dataset.year || '2024';
+                        const category = item.dataset.category || 'Art';
+                        
+                        openModal(img.src, title, year, category);
+                    }
+                    
+                    currentIndex++;
+                }, 3000); // 3 seconds per artwork
+                
+                if (navigator.vibrate) navigator.vibrate(10);
+            }
+            
+            function stopSlideshow() {
+                slideshowActive = false;
+                if (slideshowInterval) {
+                    clearInterval(slideshowInterval);
+                    slideshowInterval = null;
+                }
+                
+                // Update button icon
+                const slideshowBtn = document.querySelector('.fab-menu .btn-light:last-child i');
+                if (slideshowBtn) {
+                    slideshowBtn.className = 'fas fa-play';
+                }
+                
+                // Close any open modal
+                closeLightbox();
+                
+                if (navigator.vibrate) navigator.vibrate(10);
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Page loading spinner -->
+    <!-- Loading Progress Bar -->
+    <div class="loading-progress"></div>
+    
+    <div class="page-loading active">
+        <div class="page-loading-inner">
+            <div class="page-spinner"></div><span>Loading Gallery...</span>
+        </div>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Page wrapper for sticky footer -->
+    <main class="page-wrapper" id="main-content" style="opacity: 1; visibility: visible;">
+    
+  <header class="header navbar navbar-expand-lg bg-light shadow-sm fixed-top pt-0 pb-0">
+      <div class="container px-3">
+        <!-- Brand/Logo -->
+        <a href="index.html" class="navbar-brand">
+          <span>Jeffrey F. S. Neumann</span>
+        </a>
+        <!-- Offcanvas Navigation -->
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+          <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- Navigation Links -->
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria="page">Misc.</a>
+                <div class="dropdown-menu p-0">
+                  <div class="d-lg-flex">
+                    <div
+                      class="mega-dropdown-column d-flex justify-content-center align-items-center rounded-3 rounded-end-0 px-0"
+                      style="margin: -1px; background-color: #f3f6ff">
+                      <picture>
+                        <source srcset="assets/img/landings.webp" type="image/webp">
+                        <img src="assets/img/landings.jpg" alt="Landings" />
+                      </picture>
+                    </div>
+                    <div class="mega-dropdown-column pt-lg-3 pb-lg-4" style="--si-mega-dropdown-column-width: 12rem">
+                      <ul class="list-unstyled mb-0">
+                        <li><a href="about.html" class="dropdown-item">About Me</a></li>
+                        <li><a href="websites.html" class="dropdown-item">Design Archives</a></li>
+                        <li><a href="Jeff%20Neumann%20Resume.pdf" class="dropdown-item">Resume</a></li>
+                        <li>
+                          <a
+                            href="old/Mr_SNOWmann/index.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="dropdown-item"
+                            >Mr_SNOWmann</a
+                          >
+                        </li>
+                        <li><a href="#" class="dropdown-item"></a></li>
+
+                        <li class="dropdown-item">
+                          Sebastian&nbsp;
+                          <a
+                            href="old/sebastian%20V1/sebastian.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >V1</a
+                          >
+                          &nbsp;&amp;&nbsp;
+                          <a
+                            href="old/sebastian%20V2/index.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >V2</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="portfolio.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Portfolio</a>
+                <div class="dropdown-menu">
+                  <div class="d-lg-flex pt-lg-3">
+                    <div class="mega-dropdown-column">
+                      <ul class="list-unstyled mb-3">
+                        <li><a href="portfolio.html" class="dropdown-item">My Portfolio</a></li>
+
+                        <li>
+                          <a href="https://showspace.so/s/jeffrey-neumann-46" class="dropdown-item py-1" target="_blank"
+                            >Projects<span class="badge bg-success ms-2">NEW</span></a
+                          >
+                        </li>
+
+                        <li>
+                          <a href="https://5k1zspyjnguz.trickle.host" class="dropdown-item py-1" target="_blank"
+                            >Brand Brain<span class="badge bg-success ms-2">NEW</span></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="studies.html" class="nav-link">Case Study</a>
+              </li>
+              <li class="nav-item">
+                <a href="ai.html" class="nav-link">AI/UX</a>
+              </li>
+              <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a href="design.html" class="nav-link">Design</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Theme Switcher & Mobile Nav Toggle -->
+        <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+          <input type="checkbox" class="form-check-input" id="theme-mode" />
+          <label class="form-check-label d-none d-sm-block" for="theme-mode">Light</label>
+          <label class="form-check-label d-none d-sm-block" for="theme-mode">Dark</label>
+        </div>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero hero-section hero-parallax" role="banner" aria-label="Gallery introduction">
+        <!-- Hero Slides -->
+        <div class="hero-slide active">
+            <picture>
+                <source srcset="web/art1010-hero-400.webp" media="(max-width: 480px)" type="image/webp">
+                <source srcset="web/art1010-hero-400.webp" media="(max-width: 800px)" type="image/webp">
+                <source srcset="web/art1010-hero-400.webp" media="(max-width: 1200px)" type="image/webp">
+                <img src="web/art1010-hero-400.webp" alt="Fine Art Gallery" class="hero-image" loading="eager" fetchpriority="high" width="1920" height="1080" decoding="sync">
+            </picture>
+            <div class="hero-content" style="position: absolute !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%) !important; text-align: center !important; color: white !important; z-index: 10 !important; width: 90% !important; max-width: 800px !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important;">
+                <div class="hero-text text-reveal text-center" style="opacity: 1 !important; visibility: visible !important; text-align: center !important; width: 100% !important; max-width: 600px !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important;">
+                    <h1 class="h1 fw-bold mb-4 hero-title text-content" style="color: white !important; text-align: center !important; margin: 0 0 1rem 0 !important; font-size: clamp(3rem, 7.5vw, 5.25rem) !important; font-weight: 700 !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important; width: 100% !important;">Fine Art Gallery</h1>
+                    <p class="lead mb-4 hero-description text-content" style="color: white !important; text-align: center !important; margin: 0 0 2rem 0 !important; max-width: 600px !important; font-size: clamp(1rem, 2.5vw, 1.25rem) !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important; font-weight: 400 !important; width: 100% !important;">Inspired by Picasso's Guernica, my work explores the human condition through fragmented perspectives, emotional intensity, and the raw power of artistic expression.</p>
+                    <div class="hero-actions text-content text-center" style="opacity: 1 !important; visibility: visible !important; text-align: center !important; margin: 0 !important; display: flex !important; justify-content: center !important; align-items: center !important; width: 100% !important;">
+                        <a href="#gallery" class="btn btn-warning btn-lg px-4 py-2" style="background-color: #ff8c00; border-color: #ff8c00; color: white; display: inline-flex !important; align-items: center !important; justify-content: center !important; text-align: center !important; margin: 0 auto !important;">
+                            <i class="fas fa-palette me-2"></i>Explore Gallery
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Removed unused hero slides to improve performance -->
+
+
+
+        <!-- Removed hero progress bar (only one slide) -->
+
+
+
+        <!-- Removed decorative elements to improve performance -->
+        <style>
+            /* Prevent layout shift from removed elements */
+            .snowman-container, .gif-container {
+                display: none !important;
+                width: 0 !important;
+                height: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            
+            /* Ensure hero section has consistent height */
+            .hero-section {
+                min-height: 100vh;
+                position: relative;
+            }
+            
+            /* Prevent layout shift from loading images */
+            .hero-image {
+                width: 100% !important;
+                height: 100vh !important;
+                object-fit: cover !important;
+                display: block !important;
+            }
+        </style>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-text">Explore image filters</div>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+
+    </section>
+
+            <!-- Enhanced Filter Bar with Advanced Features -->
+            <div class="sticky-top filter-section fade-in-up" style="top: 45px; z-index: 999; box-shadow: 0 -1px 5px rgba(0,0,0,0.4), 0 0 0 rgba(0,0,0,0), 0 0 75px rgba(0,0,0,0.95) !important;">
+            
+            <!-- Mobile Bottom Navigation -->
+            <div class="mobile-bottom-nav d-md-none" style="position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-top: 1px solid rgba(0,0,0,0.1); z-index: 1000; padding: 0.5rem 0;">
+            
+            <!-- Floating Action Button -->
+            <div class="fab-container d-md-none" style="position: fixed; bottom: 80px; right: 20px; z-index: 1001;">
+                <button class="btn btn-primary rounded-circle shadow-lg" onclick="toggleFabMenu()" style="width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="fab-menu" style="position: absolute; bottom: 70px; right: 0; display: none; flex-direction: column; gap: 10px;">
+                    <button class="btn btn-light rounded-circle shadow" onclick="shareGallery()" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="btn btn-light rounded-circle shadow" onclick="toggleViewMode()" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="btn btn-light rounded-circle shadow" onclick="scrollToTop()" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+                <div class="container-fluid">
+                    <div class="row text-center">
+                        <div class="col-4">
+                            <button class="btn btn-link text-decoration-none p-2" onclick="scrollToTop()" aria-label="Go to top">
+                                <i class="fas fa-home"></i>
+                                <div class="small">Home</div>
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-link text-decoration-none p-2" onclick="toggleFavorites()" aria-label="Favorites">
+                                <i class="fas fa-heart"></i>
+                                <div class="small">Favorites</div>
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-link text-decoration-none p-2" onclick="toggleMenu()" aria-label="Menu">
+                                <i class="fas fa-bars"></i>
+                                <div class="small">Menu</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="container-fluid py-4 px-2">
+            <div class="row align-items-center">
+
+                <div class="col-12">
+                    <div class="d-flex gap-2" id="filter-buttons">
+                        <button type="button" class="btn btn-primary btn-sm filter-btn" data-filter="all" aria-label="Show all artworks">
+                            <i class="fas fa-th-large me-1"></i>All
+                        </button>
+                        <button type="button" class="btn btn-warning btn-sm filter-btn" data-filter="favorites" aria-label="Show favorite artworks" style="background-color: #d97706; border-color: #d97706; color: white; font-weight: 600;">
+                            <i class="fas fa-heart me-1" aria-hidden="true"></i>Favorites
+                        </button>
+                        <button type="button" class="btn btn-success btn-sm filter-btn" data-filter="New" aria-label="Show new artworks" style="background-color: #059669; border-color: #059669; color: white; font-weight: 600;">
+                            <i class="fas fa-star me-1" aria-hidden="true"></i>New
+                        </button>
+                        <button type="button" class="btn btn-info btn-sm filter-btn" data-filter="Work in Progress" aria-label="Show work in progress artworks" style="background-color: #0891b2; border-color: #0891b2; color: white; font-weight: 600;">
+                            <i class="fas fa-tools me-1" aria-hidden="true"></i>Work in Progress
+                        </button>
+                        <!-- Dynamic filter buttons will be inserted here -->
+                    </div>
+                </div>
+
+
+            </div>
+            
+            <!-- Advanced Filters Row -->
+            <div class="row mt-3" id="advanced-filters" style="display: none;">
+                <div class="col-12">
+                    <div class="d-flex gap-4 flex-wrap align-items-center justify-content-center">
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="form-label mb-0 fw-semibold" for="year-filter">Year:</label>
+                            <select class="form-select form-select-sm" id="year-filter" style="width: auto;">
+                                <option value="">All Years</option>
+                            </select>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="form-label mb-0 fw-semibold" for="sort-filter">Sort by:</label>
+                            <select class="form-select form-select-sm" id="sort-filter" style="width: auto;">
+                                <option value="title">Title</option>
+                                <option value="year">Year</option>
+                                <option value="category">Category</option>
+                                <option value="favorites">Favorites</option>
+                            </select>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="form-label mb-0 fw-semibold" for="order-filter">Order:</label>
+                            <select class="form-select form-select-sm" id="order-filter" style="width: auto;">
+                                <option value="asc">Ascending</option>
+                                <option value="desc">Descending</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="applyAdvancedFilters()" aria-label="Apply advanced filters">
+                            <i class="fas fa-cog me-1"></i>Apply
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="toggleAdvancedFilters()" aria-label="Hide advanced filters">
+                            <i class="fas fa-times me-1"></i>Hide
+                        </button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="refreshRandomOrder()" aria-label="Refresh random order">
+                            <i class="fas fa-random me-1"></i>Shuffle
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            
+    <!-- Gallery -->
+    <main class="container-fluid py-5 px-2 section-fade-in" id="gallery">
+        <!-- Filter Results Info -->
+        <div class="search-results-info" id="search-results-info" style="display: none; position: relative;">
+            <div style="display: flex; align-items: center; gap: 15px; padding-left: 130px;">
+                <div>
+                    <h4 id="search-results-title">Filter Results</h4>
+                    <p id="search-results-description">🌟 Exploring the complete artistic universe 🌟</p>
+                </div>
+            </div>
+            <img src="assets/img/jef-neumann.png" alt="Jeffrey Neumann Avatar" class="avatar-image" style="position: absolute; bottom: 0; left: 3px; height: 85px !important; width: 144px !important; max-width: 144px !important; max-height: 85px !important;">
+        </div>
+        
+        <!-- Active Filters -->
+        <div class="active-filters" id="active-filters"></div>
+        
+        <div class="gallery-container">
+            <div class="row g-2" id="gallery-grid">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+            
+            <!-- No results state -->
+            <div class="no-results" id="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h4>No artworks found</h4>
+                <p>Try adjusting your search terms or filters</p>
+            </div>
+            
+            <!-- Loading more indicator -->
+            <div class="loading-more" id="loading-more" style="display: none;">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2">Loading more artworks...</p>
+            </div>
+        </div>
+        
+        <!-- Loading skeleton -->
+                    <div class="row g-2" id="loading-skeleton" style="display: none;">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100">
+                    <div class="skeleton" style="height: 280px;"></div>
+                    <div class="card-body">
+                        <div class="skeleton" style="height: 20px; width: 80%; margin-bottom: 10px;"></div>
+                        <div class="skeleton" style="height: 30px; width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100">
+                    <div class="skeleton" style="height: 280px;"></div>
+                    <div class="card-body">
+                        <div class="skeleton" style="height: 20px; width: 80%; margin-bottom: 10px;"></div>
+                        <div class="skeleton" style="height: 30px; width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100">
+                    <div class="skeleton" style="height: 280px;"></div>
+                    <div class="card-body">
+                        <div class="skeleton" style="height: 20px; width: 80%; margin-bottom: 10px;"></div>
+                        <div class="skeleton" style="height: 30px; width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Enhanced Modal -->
+    <div class="modal" id="modal">
+        <button type="button" class="modal-close" onclick="closeModal()" aria-label="Close modal">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <button type="button" class="modal-nav prev" id="modal-prev" onclick="navigateModal(-1)" aria-label="Previous artwork">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <button type="button" class="modal-nav next" id="modal-next" onclick="navigateModal(1)" aria-label="Next artwork">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <div class="modal-content">
+            <div class="modal-image-container">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Artwork display area" class="modal-image" id="modal-image" onclick="toggleZoom()">
+                
+                <div class="zoom-controls">
+                    <button type="button" class="zoom-btn" onclick="zoomIn()" aria-label="Zoom in">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button type="button" class="zoom-btn" onclick="zoomOut()" aria-label="Zoom out">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button type="button" class="zoom-btn" onclick="resetZoom()" aria-label="Reset zoom">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="modal-info">
+                <h2 class="modal-title" id="modal-title">Artwork Title</h2>
+                <p class="modal-details" id="modal-details">Year • Category</p>
+                <p class="modal-description" id="modal-description">Artwork description will appear here.</p>
+                
+                <div class="modal-actions">
+                    <button type="button" class="modal-btn primary" onclick="downloadImage()" aria-label="Download artwork image">
+                        <i class="fas fa-download"></i>Download
+                    </button>
+                    <button type="button" class="modal-btn secondary" onclick="shareImage()" aria-label="Share artwork">
+                        <i class="fas fa-share"></i>Share
+                    </button>
+                    <button type="button" class="modal-btn secondary" onclick="addToFavorites()" aria-label="Add artwork to favorites">
+                        <i class="fas fa-heart"></i>Favorite
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quick-view-modal">
+        <div class="quick-view-content">
+            <h3 class="quick-view-title" id="quick-view-title">Artwork Title</h3>
+            <p class="quick-view-details" id="quick-view-details">Year • Category</p>
+            
+            <div class="quick-view-actions">
+                <button type="button" class="quick-view-btn primary" onclick="openFullModal()" aria-label="Open full artwork view">
+                    <i class="fas fa-expand"></i>View Full
+                </button>
+                <button type="button" class="quick-view-btn secondary" onclick="closeQuickView()" aria-label="Close quick view">
+                    <i class="fas fa-times"></i>Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </script>
+
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="display: none;">
+        <div class="container py-2">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#gallery">Gallery</a></li>
+                <li class="breadcrumb-item active" id="breadcrumb-current">All Artworks</li>
+            </ol>
+        </div>
+    </nav>
+
+
+
+    <!-- Keyboard Shortcuts Help -->
+    <div class="keyboard-help" id="keyboard-help" style="display: none;">
+        <div class="keyboard-help-content">
+            <h4><i class="fas fa-keyboard me-2"></i>Keyboard Shortcuts</h4>
+            <div class="shortcuts-grid">
+                <div class="shortcut-item">
+                    <kbd>Esc</kbd>
+                    <span>Close modals</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>←</kbd>
+                    <span>Previous artwork/slide</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>→</kbd>
+                    <span>Next artwork/slide</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>Space</kbd>
+                    <span>Toggle zoom/slideshow</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>F</kbd>
+                    <span>Focus search</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>G</kbd>
+                    <span>Go to gallery</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>R</kbd>
+                    <span>Random artwork</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>?</kbd>
+                    <span>Show/hide shortcuts</span>
+                </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleKeyboardHelp()">
+                <i class="fas fa-times me-1"></i>Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Image Comparison Slider Modal -->
+    <div class="modal fade" id="comparisonModal" tabindex="-1" aria-labelledby="comparisonModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="comparisonModalLabel">
+                        <i class="fas fa-exchange-alt me-2"></i>Image Comparison
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="comparison-container">
+                        <div class="comparison-slider" id="comparisonSlider">
+                            <div class="comparison-before">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Before comparison image" id="comparisonBefore" class="comparison-image">
+                                <div class="comparison-label before-label">Original</div>
+                            </div>
+                            <div class="comparison-after">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="After comparison image" id="comparisonAfter" class="comparison-image">
+                                <div class="comparison-label after-label">Enhanced</div>
+                            </div>
+                            <div class="comparison-handle" id="comparisonHandle">
+                                <div class="handle-line"></div>
+                                <div class="handle-circle">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-controls mt-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="resetComparison()">
+                            <i class="fas fa-undo me-1"></i>Reset
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="toggleComparisonLabels()">
+                            <i class="fas fa-tags me-1"></i>Toggle Labels
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Details Panel Backdrop -->
+    <div class="details-panel-backdrop" id="detailsPanelBackdrop" onclick="closeDetailsPanel()"></div>
+    
+    <!-- Artwork Details Panel -->
+    <div class="artwork-details-panel" id="artworkDetailsPanel">
+        <div class="details-header">
+            <div>
+                <h4><i class="fas fa-info-circle me-2"></i>Artwork Details</h4>
+                <small class="text-muted">Press <kbd>Esc</kbd> to close</small>
+            </div>
+            <button type="button" class="btn-close" onclick="closeDetailsPanel()" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="details-content">
+            <div class="detail-item">
+                <span class="detail-label">Title:</span>
+                <span class="detail-value" id="detailTitle">-</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Year:</span>
+                <span class="detail-value" id="detailYear">-</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Category:</span>
+                <span class="detail-value" id="detailCategory">-</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Medium:</span>
+                <span class="detail-value" id="detailMedium">-</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Dimensions:</span>
+                <span class="detail-value" id="detailDimensions">-</span>
+            </div>
+            <div class="detail-item full-width">
+                <span class="detail-label">Description:</span>
+                <p class="detail-description" id="detailDescription">-</p>
+            </div>
+            <div class="detail-actions">
+                <button type="button" class="btn btn-primary btn-sm" onclick="openComparison()">
+                    <i class="fas fa-exchange-alt me-1"></i>Compare
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-sm" onclick="shareArtwork()">
+                    <i class="fas fa-share me-1"></i>Share
+                </button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" onclick="addToCollection()">
+                    <i class="fas fa-folder-plus me-1"></i>Add to Collection
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Tour Mode -->
+
+
+    <!-- Analytics Dashboard -->
+    <div class="analytics-dashboard" id="analyticsDashboard">
+        <div class="dashboard-header">
+            <h4><i class="fas fa-chart-line me-2"></i>Gallery Analytics</h4>
+            <button type="button" class="btn-close" onclick="closeAnalytics()" aria-label="Close"></button>
+        </div>
+        <div class="dashboard-content">
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <div class="analytics-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="analytics-info">
+                        <h5>Total Views</h5>
+                        <span class="analytics-number" id="totalViews">0</span>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="analytics-info">
+                        <h5>Favorites</h5>
+                        <span class="analytics-number" id="totalFavorites">0</span>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-icon">
+                        <i class="fas fa-share"></i>
+                    </div>
+                    <div class="analytics-info">
+                        <h5>Shares</h5>
+                        <span class="analytics-number" id="totalShares">0</span>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="analytics-info">
+                        <h5>Session Time</h5>
+                        <span class="analytics-number" id="sessionTime">0m</span>
+                    </div>
+                </div>
+            </div>
+            <div class="analytics-charts">
+                <div class="chart-container">
+                    <h6>Popular Categories</h6>
+                    <div class="category-chart" id="categoryChart"></div>
+                </div>
+                <div class="chart-container">
+                    <h6>Viewing Trends</h6>
+                    <div class="trend-chart" id="trendChart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Virtual Reality Preview -->
+    <div class="vr-preview-modal" id="vrPreviewModal">
+        <div class="vr-container">
+            <div class="vr-header">
+                <h4><i class="fas fa-vr-cardboard me-2"></i>VR Preview</h4>
+                <button type="button" class="btn-close" onclick="closeVRPreview()" aria-label="Close"></button>
+            </div>
+            <div class="vr-content">
+                <div class="vr-viewport" id="vrViewport">
+                    <div class="vr-scene">
+                        <div class="vr-artwork" id="vrArtwork"></div>
+                        <div class="vr-controls">
+                            <button type="button" class="vr-btn" onclick="rotateVR('left')" aria-label="Rotate left">
+                                <i class="fas fa-undo"></i>
+                            </button>
+                            <button type="button" class="vr-btn" onclick="rotateVR('right')" aria-label="Rotate right">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                            <button type="button" class="vr-btn" onclick="zoomVR('in')" aria-label="Zoom in">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                            <button type="button" class="vr-btn" onclick="zoomVR('out')" aria-label="Zoom out">
+                                <i class="fas fa-search-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="vr-info">
+                    <h5 id="vrTitle">Artwork Title</h5>
+                    <p id="vrDescription">Artwork description and details.</p>
+                    <div class="vr-actions">
+                        <button type="button" class="btn btn-primary" onclick="enterFullscreenVR()">
+                            <i class="fas fa-expand me-1"></i>Fullscreen VR
+                        </button>
+                        <button type="button" class="btn btn-outline-primary" onclick="shareVR()">
+                            <i class="fas fa-share me-1"></i>Share VR
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Features Panel -->
+    <div class="social-panel" id="socialPanel">
+        <div class="social-header">
+            <h4><i class="fas fa-users me-2"></i>Community</h4>
+            <button type="button" class="btn-close" onclick="closeSocialPanel()" aria-label="Close"></button>
+        </div>
+        <div class="social-content">
+            <div class="social-tabs">
+                <button type="button" class="social-tab active" onclick="switchSocialTab('comments')">
+                    <i class="fas fa-comments me-1"></i>Comments
+                </button>
+                <button type="button" class="social-tab" onclick="switchSocialTab('likes')">
+                    <i class="fas fa-heart me-1"></i>Likes
+                </button>
+                <button type="button" class="social-tab" onclick="switchSocialTab('shares')">
+                    <i class="fas fa-share me-1"></i>Shares
+                </button>
+            </div>
+            <div class="social-content-area">
+                <div class="social-section active" id="commentsSection">
+                    <div class="comment-form">
+                        <label for="commentInput" class="visually-hidden">Comment</label>
+                        <textarea placeholder="Share your thoughts..." id="commentInput" aria-label="Share your thoughts"></textarea>
+                        <button type="button" class="btn btn-primary btn-sm" onclick="addComment()">
+                            <i class="fas fa-paper-plane me-1"></i>Post
+                        </button>
+                    </div>
+                    <div class="comments-list" id="commentsList">
+                        <!-- Comments will be loaded here -->
+                    </div>
+                </div>
+                <div class="social-section" id="likesSection">
+                    <div class="likes-list" id="likesList">
+                        <!-- Likes will be loaded here -->
+                    </div>
+                </div>
+                <div class="social-section" id="sharesSection">
+                    <div class="shares-list" id="sharesList">
+                        <!-- Shares will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Fine Art Work Section -->
+    <section class="container-fluid"> <!-- Use container-fluid for full width -->
+        <h1 class="pb-4 text-center pt-5">Fine Art Work</h1>
+        <div class="row mx">
+            <div class="col px-0">
+                <picture>
+                  <source srcset="images/websites/art.webp" type="image/webp">
+                  <img src="images/websites/art.jpg" alt="Art Gallery Showcase" loading="lazy" width="800" height="600">
+                </picture>
+                <picture>
+                  <source srcset="images/websites/fine-art-2.webp" type="image/webp">
+                  <img src="images/websites/fine-art-2.jpg" alt="Fine Art Collection" loading="lazy" width="800" height="600">
+                </picture>
+                <picture>
+                  <source srcset="images/websites/fine-art-horzontal.webp" type="image/webp">
+                  <img src="images/websites/fine-art-horzontal.jpg" alt="Horizontal Art Display" loading="lazy" width="800" height="400">
+                </picture>
+                <picture>
+                  <source srcset="images/websites/Jean-Michel Basquiat+Leonardo da Vinci NFT-001A.webp" type="image/webp">
+                  <img src="images/websites/Jean-Michel%20Basquiat+Leonardo%20da%20Vinci%20NFT-001A.jpg" alt="Jean-Michel Basquiat and Leonardo da Vinci NFT Artwork" loading="lazy" width="800" height="600">
+                </picture>
+                
+            </div>
+        </div>
+      
+    </section>
+
+        </div>
+
+
+  
+<!-- Social networks (Carousel on narrow screens) -->
+      <section class="container text-center py-5 my-2 my-md-4 my-lg-5">
+     
+  <div class="swiper" data-swiper-options='{
+      "slidesPerView": 2,
+      "spaceBetween": 30,
+      "pagination": {
+        "el": ".swiper-pagination",
+        "clickable": true
+      },
+      "breakpoints": {
+        "500": {
+          "slidesPerView": 3
+        },
+        "650": {
+          "slidesPerView": 4
+        },
+        "900": {
+          "slidesPerView": 5
+        },
+        "1100": {
+          "slidesPerView": 6
+        },
+        "1400": {
+          "slidesPerView": 7
+        }
+      }
+    }'>
+          <div class="swiper-wrapper">
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+              <a href="https://www.facebook.com/jeffrey.neumann1/" class="btn btn-icon btn-secondary btn-facebook btn-lg stretched-link" aria-label="Facebook" target="_blank">
+  <i class="bx bxl-facebook"></i>
+</a>
+
+                <div class="pt-4">
+                  <h6 class="mb-1">Facebook</h6>
+                  <p class="fs-sm text-muted mb-0">jeffrey.neumann1</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+         <div class="swiper-slide">
+  <div class="position-relative text-center border-end mx-n1">
+    <a href="https://showspace.so/s/jeffrey-neumann-46" class="btn btn-icon btn-secondary btn-party btn-lg stretched-link" aria-label="party" target="_blank">
+      <i class="bx bx-party fs-3"></i>
+    </a>
+    <div class="pt-4">
+      <h6 class="mb-1">Showspace</h6>
+      <p class="fs-sm text-muted mb-0">@jeffrey-neumann-46</p>
+    </div>
+  </div>
+</div>
+
+
+          
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://www.linkedin.com/in/jeffreyneumann/" class="btn btn-icon btn-secondary btn-linkedin btn-lg stretched-link" aria-label="LinkedIn" target="_blank">
+                  <i class="bx bxl-linkedin"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">LinkedIn</h6>
+                  <p class="fs-sm text-muted mb-0">jeffreyneumann/</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://www.youtube.com/@jfsneumann/videos" class="btn btn-icon btn-secondary btn-youtube btn-lg stretched-link" aria-label="Twitter" target="_blank">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">YouTube</h6>
+                  <p class="fs-sm text-muted mb-0">@jfsneumann/videos</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://dribbble.com/JFSN" class="btn btn-icon btn-secondary btn-dribbble btn-lg stretched-link" aria-label="Dribbble" target="_blank">
+                  <i class="bx bxl-dribbble"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">Dribbble</h6>
+                  <p class="fs-sm text-muted mb-0">JFSN</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://www.instagram.com/jeffreyneumann/" class="btn btn-icon btn-secondary btn-instagram btn-lg stretched-link" aria-label="Instagram" target="_blank">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">Instagram</h6>
+                  <p class="fs-sm text-muted mb-0">@jeffreyneumann</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://twitter.com/jeffreyneumann" class="btn btn-icon btn-secondary btn-twitter btn-lg stretched-link" aria-label="Twitter" target="_blank">
+                  <i class="bx bxl-twitter"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">Twitter</h6>
+                  <p class="fs-sm text-muted mb-0">@jeffreyneumann</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://www.tiktok.com/@jeffreyneumann" class="btn btn-icon btn-secondary btn-tiktok btn-lg stretched-link" aria-label="TikTok" target="_blank">
+                  <i class="bx bxl-tiktok"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">TikTok</h6>
+                  <p class="fs-sm text-muted mb-0">@jeffreyneumann</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://www.behance.net/jeffreyneumann" class="btn btn-icon btn-secondary btn-behance btn-lg stretched-link" aria-label="Behance" target="_blank">
+                  <i class="bx bxl-behance"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">Behance</h6>
+                  <p class="fs-sm text-muted mb-0">jeffreyneumann</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination (bullets) -->
+          <div class="swiper-pagination position-relative bottom-0 pt-3 mt-4"></div>
+        </div>
+      </section>
+    <!-- Down Load Resume -->
+     
+  
+    
+
+     <!-- Footer -->
+    <footer class="footer bg-dark pt-5 pb-4 pb-lg-5" data-bs-theme="dark">
+        <div class="container pt-lg-4">
+             <p class="nav d-block fs-xs text-center  pb-2 pb-lg-0 mb-0"><span class="text-light opacity-50">&copy; All rights reserved. Portfolio of</span>
+                <img alt="JFSN" src="assets/img/me-for-website-400.webp" width="67" style="width: 67px !important; max-width: 67px !important; height: auto !important;">
+                <a class="nav-link d-inline-block p-0" href="http://www.jfsn.com/" rel="noopener" target="_blank">Jeffrey Francis Stanley Neumann</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating Airplanes -->
+    <div class="floating-airplane" id="floating-airplane-1" data-airplane="1">
+        <img src="assets/img/airplane-1.svg" alt="Floating Airplane 1" class="airplane-image">
+    </div>
+    <div class="floating-airplane" id="floating-airplane-2" data-airplane="2">
+        <img src="assets/img/airplane-2.svg" alt="Floating Airplane 2" class="airplane-image">
+    </div>
+    <div class="floating-airplane" id="floating-airplane-3" data-airplane="3">
+        <img src="assets/img/airplane-3.svg" alt="Floating Airplane 3" class="airplane-image">
+    </div>
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+        <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+        <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>   
+    
+    <!-- Critical Scripts (load first) -->
+    <script src="assets/js/theme.min.js" defer></script>
+    
+    <!-- Non-critical scripts loaded asynchronously -->
+    <!-- Swiper loaded only when needed for social carousel -->
+    <script>
+        // Load Swiper only when social carousel is visible
+        function loadSwiperWhenNeeded() {
+            const socialCarousel = document.querySelector('.swiper');
+            if (socialCarousel && !window.Swiper) {
+                const script = document.createElement('script');
+                script.src = 'assets/vendor/swiper/swiper-bundle.min.js';
+                script.onload = function() {
+                    // Initialize Swiper after loading
+                    if (typeof Swiper !== 'undefined') {
+                        const swiperElements = document.querySelectorAll('.swiper');
+                        swiperElements.forEach(function(element) {
+                            const options = JSON.parse(element.getAttribute('data-swiper-options') || '{}');
+                            new Swiper(element, options);
+                        });
+                    }
+                };
+                document.head.appendChild(script);
+            }
+        }
+        
+        // Load Swiper when social section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    loadSwiperWhenNeeded();
+                    observer.disconnect();
+                }
+            });
+        });
+        
+        // Observe the social section
+        document.addEventListener('DOMContentLoaded', () => {
+            const socialSection = document.querySelector('.swiper');
+            if (socialSection) {
+                observer.observe(socialSection);
+            }
+        });
+    </script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js" defer></script>
+    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js" defer></script>
+    <!-- Removed unused libraries: imagesloaded and shufflejs -->
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js" defer></script>
+    <script src="assets/vendor/parallax-js/dist/parallax.min.js" defer></script>
+
+    <!-- Initialize Swiper and Performance optimizations -->
+    <script>
+        // Global function for refreshing random order
+        function refreshRandomOrder() {
+            if (typeof GalleryRandom !== 'undefined' && GalleryRandom.refreshRandomOrder) {
+                GalleryRandom.refreshRandomOrder();
+            } else {
+                console.log('GalleryRandom not available');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+    
+            
+            // Initialize floating airplanes after a short delay to ensure DOM is ready
+            setTimeout(() => {
+                initializeFloatingAirplanes();
+            }, 1000); // 1 second delay
+            
+
+            
+
+            // Initialize all Swiper instances
+            if (typeof Swiper !== 'undefined') {
+                const swiperElements = document.querySelectorAll('.swiper');
+                swiperElements.forEach(function(element) {
+                    const options = JSON.parse(element.getAttribute('data-swiper-options') || '{}');
+                    new Swiper(element, options);
+                });
+            } else {
+                console.log('Swiper not available, skipping initialization');
+            }
+            
+            // Initialize favorite count
+            if (typeof updateFavoriteCount === 'function') {
+                updateFavoriteCount();
+            } else {
+                console.log('updateFavoriteCount function not available');
+            }
+            
+            // Check for progress bar
+            const progressBar = document.querySelector('.progress-bar');
+            if (!progressBar) {
+                console.log('Progress bar not found - this is normal if not using progress indicators');
+            }
+            
+            // Initialize hero content visibility
+            const heroSlides = document.querySelectorAll('.hero-slide');
+
+            
+                        if (heroSlides.length > 0) {
+                // Ensure first slide is visible
+                heroSlides[0].classList.add('active');
+                heroSlides[0].style.zIndex = '5';
+                heroSlides[0].style.opacity = '1';
+                
+                // Ensure hero content is visible
+                heroSlides.forEach((slide, index) => {
+                    const content = slide.querySelector('.hero-content');
+                    if (content) {
+                        content.style.zIndex = '10';
+                        content.style.pointerEvents = 'auto';
+                        content.style.opacity = '1';
+                        content.style.visibility = 'visible';
+                        
+                        // Force visibility of text elements
+                        const title = content.querySelector('.hero-title');
+                        const description = content.querySelector('.hero-description');
+                        const actions = content.querySelector('.hero-actions');
+                        
+                        if (title) title.style.opacity = '1';
+                        if (description) description.style.opacity = '1';
+                        if (actions) actions.style.opacity = '1';
+                    }
+                });
+            }
+            
+            // Performance optimizations
+            // Preload critical images
+            const criticalImages = [
+                'web/art1010-hero-800.webp',
+                'web/art1020-hero-800.webp',
+                'web/art1011-hero-800.webp'
+            ];
+            
+            criticalImages.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = src;
+                document.head.appendChild(link);
+            });
+            
+            // Lazy load non-critical images
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.classList.remove('lazy');
+                                observer.unobserve(img);
+                            }
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+            
+            // Service worker registration temporarily disabled for debugging
+            console.log('Service worker registration disabled for debugging');
+        });
+        
+        // Multiple Floating Airplanes with Random Animation
+        function initializeFloatingAirplanes() {
+            const airplaneImages = [
+                'assets/img/airplane-1.svg',
+                'assets/img/airplane-2.svg',
+                'assets/img/airplane-3.svg',
+                'assets/img/airplane-4.svg',
+                'assets/img/airplane-5.svg',
+                'assets/img/airplane-6.svg',
+                'assets/img/airplane-7.svg',
+                'assets/img/airplane-8.svg',
+                'assets/img/airplane-9.svg'
+            ];
+            
+            const airplanes = [
+                document.getElementById('floating-airplane-1'),
+                document.getElementById('floating-airplane-2'),
+                document.getElementById('floating-airplane-3')
+            ];
+            
+
+            
+            // Initialize each airplane with random positioning and animation
+            airplanes.forEach((airplane, index) => {
+                if (!airplane) return;
+                
+                const airplaneImage = airplane.querySelector('.airplane-image');
+                let currentImageIndex = index;
+                
+                // Set initial position at top (will be animated by animateAirplane function)
+                airplane.style.left = '0px';
+                airplane.style.top = '-300px'; // Start above viewport
+                
+                // Set random airplane image
+                const randomImageIndex = Math.floor(Math.random() * airplaneImages.length);
+                airplaneImage.src = airplaneImages[randomImageIndex];
+                
+                // Change airplane image on click
+                airplane.addEventListener('click', function() {
+                    currentImageIndex = (currentImageIndex + 1) % airplaneImages.length;
+                    airplaneImage.src = airplaneImages[currentImageIndex];
+                    
+                    // Add a fun spin animation on click
+                    airplane.style.transform = 'scale(1.2) rotate(360deg)';
+                    setTimeout(() => {
+                        airplane.style.transform = '';
+                    }, 300);
+                });
+                
+                // Individual airplane setup complete (group animation will be started separately)
+                
+                // Make airplane draggable
+                let isDragging = false;
+                let currentX;
+                let currentY;
+                let initialX;
+                let initialY;
+                let xOffset = 0;
+                let yOffset = 0;
+                
+                airplane.addEventListener('mousedown', dragStart);
+                document.addEventListener('mousemove', drag);
+                document.addEventListener('mouseup', dragEnd);
+                
+                function dragStart(e) {
+                    initialX = e.clientX - xOffset;
+                    initialY = e.clientY - yOffset;
+                    
+                    if (e.target === airplane || e.target === airplaneImage) {
+                        isDragging = true;
+                        airplane.style.pointerEvents = 'auto';
+                    }
+                }
+                
+                function drag(e) {
+                    if (isDragging) {
+                        e.preventDefault();
+                        currentX = e.clientX - initialX;
+                        currentY = e.clientY - initialY;
+                        xOffset = currentX;
+                        yOffset = currentY;
+                        
+                        setTranslate(currentX, currentY, airplane);
+                    }
+                }
+                
+                function setTranslate(xPos, yPos, el) {
+                    el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+                }
+                
+                function dragEnd(e) {
+                    initialX = currentX;
+                    initialY = currentY;
+                    isDragging = false;
+                    setTimeout(() => {
+                        airplane.style.pointerEvents = 'none';
+                    }, 100);
+                }
+            });
+            
+            // Group animation function - all three airplanes fly together
+            function animateAirplaneGroup() {
+    
+                            const airplanes = [
+                document.getElementById('floating-airplane-1'),
+                document.getElementById('floating-airplane-2'),
+                document.getElementById('floating-airplane-3')
+            ];
+            
+            // Check if any airplanes are missing and create them if needed
+            if (!airplanes[0] || !airplanes[1] || !airplanes[2]) {
+                const body = document.body;
+                
+                for (let i = 1; i <= 3; i++) {
+                    const airplaneDiv = document.createElement('div');
+                    airplaneDiv.className = 'floating-airplane';
+                    airplaneDiv.id = `floating-airplane-${i}`;
+                    airplaneDiv.setAttribute('data-airplane', i);
+                    
+                    const airplaneImg = document.createElement('img');
+                    airplaneImg.src = `assets/img/airplane-${i}.svg`;
+                    airplaneImg.alt = `Floating Airplane ${i}`;
+                    airplaneImg.className = 'airplane-image';
+                    
+                    airplaneDiv.appendChild(airplaneImg);
+                    body.appendChild(airplaneDiv);
+                    
+    
+                }
+                
+                // Update airplanes array with newly created elements
+                airplanes[0] = document.getElementById('floating-airplane-1');
+                airplanes[1] = document.getElementById('floating-airplane-2');
+                airplanes[2] = document.getElementById('floating-airplane-3');
+                
+
+            }
+                
+                const animate = () => {
+                    // Get airplane sizes for boundary calculations
+                    const airplaneWidths = airplanes.map(plane => plane?.offsetWidth || 300);
+                    const airplaneHeights = airplanes.map(plane => plane?.offsetHeight || 300);
+                    
+                    // Position all airplanes off-screen at top with random horizontal positions
+                    airplanes.forEach((airplane, index) => {
+                        if (!airplane) return;
+                        
+                        const airplaneWidth = airplaneWidths[index];
+                        const airplaneHeight = airplaneHeights[index];
+                        
+                        // Position more toward center of screen (not at edges)
+                        const centerX = window.innerWidth / 2;
+                        const centerRange = window.innerWidth * 0.3; // 30% of screen width
+                        const minX = centerX - centerRange / 2;
+                        const maxX = centerX + centerRange / 2;
+                        const randomX = minX + Math.random() * (maxX - minX);
+                        
+                        // Start from top (above viewport)
+                        const startY = -airplaneHeight;
+                        const endY = window.innerHeight + airplaneHeight; // End below viewport
+                        
+                        // Set initial position at top with fixed horizontal position
+                        airplane.style.left = randomX + 'px';
+                        airplane.style.top = startY + 'px';
+                        airplane.style.transform = 'rotate(0deg) !important'; // Completely straight down
+                        airplane.style.transformOrigin = 'center center'; // Ensure rotation is centered
+                        
+                        // Fixed duration for consistent speed
+                        const duration = 6000; // 6 seconds
+                        
+                        // Apply smooth animation to bottom - ONLY vertical movement
+                        airplane.style.transition = `top ${duration}ms linear`;
+                        airplane.style.top = endY + 'px';
+                        
+
+                        
+
+                    });
+                    
+                    // Schedule next group animation after all planes exit viewport
+                    setTimeout(() => {
+                        animate();
+                    }, 6000 + 3000); // 6 seconds flight + 3 second pause between groups
+                };
+                
+                // Start the group animation
+                animate();
+            }
+            
+            // Start the group animation after all airplanes are initialized
+            animateAirplaneGroup();
+        }
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <title>jfsn.com | Services</title>
+
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+    <!-- Hotjar Tracking Code for Site 3646716 (name missing) -->
+    <script>
+        (function(h, o, t, j, a, r) {
+            h.hj = h.hj || function() {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {
+                hjid: 3646716,
+                hjsv: 6
+            };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6366f1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+    <!-- Page loading styles -->
+    <style>
+        .page-loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: all .4s .2s ease-in-out;
+            transition: all .4s .2s ease-in-out;
+            background-color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+        }
+
+        [data-bs-theme="dark"] .page-loading {
+            background-color: #0b0f19;
+        }
+
+        .page-loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .page-loading-inner {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out;
+            opacity: 0;
+        }
+
+        .page-loading.active>.page-loading-inner {
+            opacity: 1;
+        }
+
+        .page-loading-inner>span {
+            display: block;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #9397ad;
+        }
+
+        [data-bs-theme="dark"] .page-loading-inner>span {
+            color: #fff;
+            opacity: .6;
+        }
+
+        .page-spinner {
+            display: inline-block;
+            width: 2.75rem;
+            height: 2.75rem;
+            margin-bottom: .75rem;
+            vertical-align: text-bottom;
+            border: .15em solid #b4b7c9;
+            border-right-color: transparent;
+            border-radius: 50%;
+            -webkit-animation: spinner .75s linear infinite;
+            animation: spinner .75s linear infinite;
+        }
+
+        [data-bs-theme="dark"] .page-spinner {
+            border-color: rgba(255, 255, 255, .4);
+            border-right-color: transparent;
+        }
+
+        @-webkit-keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        #portfolio {
+            scroll-margin-top: 75px;
+            /* Adjust the value as needed */
+        }
+
+        #accordionAlt:target {
+            padding-top: 200px;
+            margin-top: -200px;
+        }
+
+        .video {
+            flex: 0 0 auto;
+            /* Prevent videos from shrinking */
+            width: 10%;
+            /* Adjust based on the number of videos */
+            height: auto;
+            border: none;
+        }
+
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+        (function() {
+            window.onload = function() {
+                const preloader = document.querySelector('.page-loading');
+                preloader.classList.remove('active');
+                setTimeout(function() {
+                    preloader.remove();
+                }, 1000);
+            };
+        })();
+
+    </script>
+</head>
+<!-- Body -->
+<body>
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+        <div class="page-loading-inner">
+            <div class="page-spinner"></div><span>Loading...</span>
+        </div>
+    </div>
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper position-relative zindex-2">
+        <!-- Navbar -->
+        <!-- Remove "fixed-top" class to make navigation bar scrollable with the page -->
+        <header class="header navbar navbar-expand-lg bg-light shadow-sm fixed-top pt-0 pb-0">
+            <div class="container px-3">
+                <a href="index.html" class="navbar-brand">
+                    <span>Jeffrey F. S. Neumann</span>
+                </a>
+
+
+
+                <div id="navbarNav" class="offcanvas offcanvas-end">
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <!-- Navigation Links -->
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria="page">Misc.</a>
+                                <div class="dropdown-menu p-0">
+                                    <div class="d-lg-flex">
+                                        <div
+                                          class="mega-dropdown-column d-flex justify-content-center align-items-center rounded-3 rounded-end-0 px-0"
+                                          style="margin: -1px; background-color: #f3f6ff">
+                                          <picture>
+                                            <source srcset="assets/img/landings.webp" type="image/webp">
+                                            <img src="assets/img/landings.jpg" alt="Landings" />
+                                          </picture>
+                                        </div>
+                                        <div class="mega-dropdown-column pt-lg-3 pb-lg-4" style="--si-mega-dropdown-column-width: 12rem">
+                                          <ul class="list-unstyled mb-0">
+                                            <li><a href="about.html" class="dropdown-item">About Me</a></li>
+                                            <li><a href="websites.html" class="dropdown-item">Design Archives</a></li>
+                                            <li><a href="Jeff%20Neumann%20Resume.pdf" class="dropdown-item">Resume</a></li>
+                                            <li>
+                                              <a
+                                                href="old/Mr_SNOWmann/index.html"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="dropdown-item"
+                                                >Mr_SNOWmann</a
+                                              >
+                                            </li>
+                                            <li><a href="#" class="dropdown-item"></a></li>
+
+                                            <li class="dropdown-item">
+                                              Sebastian&nbsp;
+                                              <a
+                                                href="old/sebastian%20V1/sebastian.html"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="text-decoration-none"
+                                                >V1</a
+                                              >
+                                              &nbsp;&amp;&nbsp;
+                                              <a
+                                                href="old/sebastian%20V2/index.html"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="text-decoration-none"
+                                                >V2</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="nav-item dropdown">
+                                    <a href="portfolio.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Portfolio</a>
+                                    <div class="dropdown-menu">
+                                      <div class="d-lg-flex pt-lg-3">
+                                        <div class="mega-dropdown-column">
+                                          <ul class="list-unstyled mb-3">
+                                            <li><a href="portfolio.html" class="dropdown-item">My Portfolio</a></li>
+
+                                            <li>
+                                              <a href="https://showspace.so/s/jeffrey-neumann-46" class="dropdown-item py-1" target="_blank"
+                                                >Projects<span class="badge bg-success ms-2">NEW</span></a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a href="https://5k1zspyjnguz.trickle.host" class="dropdown-item py-1" target="_blank"
+                                                >Brand Brain<span class="badge bg-success ms-2">NEW</span></a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="nav-item active">
+                                    <a href="studies.html" class="nav-link">Case Study</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a href="ai.html" class="nav-link">AI/UX</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a href="contact.html" class="nav-link">Contact</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a href="design.html" class="nav-link">Design</a>
+                                  </li>
+                                </ul>
+                    </div>
+
+                </div>
+                <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label d-none d-sm-block" for="theme-mode">Light</label>
+                    <label class="form-check-label d-none d-sm-block" for="theme-mode">Dark</label>
+                </div>
+                <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+        </header>
+        <div class="bg-secondary pt-5">
+            <!-- Page title + Services grid -->
+            <section class="container pt-0 mt-5">
+    <h1 class="display-7 text-center mt-4">Contract Administration Tracking System (CATS) Case Study</h1>
+</section>
+<div class="container text-center mt-4">
+
+</div>
+            <section class="container pb-5 pb-md-5 pb-lg-5 mb-3 mt-5">
+                <div class="row row-cols-1 row-cols-md-1">
+
+
+
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Redesigning the Contract Administration Tracking System (CATS)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="container pb-5 pb-md-5 pb-lg-5 mb-3 mt-5">
+        <div class="row row-cols-1 row-cols-md-1">
+
+   
+    
+         
+         
+           <div class="row">
+                        <div class="col-md-3 how-img">
+                            <img src="images/cs2.webp" class=" img-fluid" alt=""/>
+                        </div>
+                        <div class="col-md-9">
+                            <h2>Introduction</h2>
+                                        
+                        <p>            The Contract Administration Tracking System (CATS) serves as the backbone for managing over 340,000 Section 8 housing contracts nationwide, impacting the lives of tenants, landlords, and administrators by ensuring housing stability. This redesign aimed to resolve usability issues, enhance user experience, and integrate advanced technologies to future-proof the platform for evolving housing administration needs. When CGI Federal identified operational inefficiencies in the legacy system, a multi-year initiative to redesign and modernize the platform began. Over ten years, this redesign significantly reduced manual tasks, improved user workflows, ensured compliance with HUD standards, and introduced automation that saved hundreds of staff hours annually. As a Design Consultant, I led the UX/UI transformation, enhancing user satisfaction and operational efficiency.
+</p>
+                        </div>
+                    </div>
+         
+
+
+  <div class="row">
+                        <div class="col-md-3 how-img">
+                            <img src="images/cs3.webp" class=" img-fluid" alt=""/>
+                        </div>
+                        <div class="col-md-9">
+                            <h2>Legacy System Problems</h2>
+                <h3>Visual Overview</h3>
+                                        
+               <p>System inefficiencies and demands required reassessment. The legacy CATS platform faced several challenges:</p>
+                <ul>
+                    <li><strong>Inefficient Workflows:</strong> Manual processes and fragmented interfaces reduced productivity by as much as 30% in key operational areas, creating significant delays in contract processing.</li>
+                    <li><strong>User Frustration:</strong> Outdated design and inconsistent navigation led to high error rates.</li>
+                    <li><strong>Compliance Risks:</strong> HUD requirements necessitated frequent updates, which were cumbersome in the legacy system.</li>
+                    <li><strong>Scalability Issues:</strong> The system struggled to support the growing volume of contracts.</li>
+                    <img src="images/cs16.png" class="img-fluid rounded m-3 p-3" alt="Case Study Image" />
+
+                </ul>
+                        </div>
+                    </div>
+         
+         
+          <div class="row">
+                        <div class="col-md-3 how-img">
+                            <img src="images/cs4.webp" class=" img-fluid" alt=""/>
+                        </div>
+                        <div class="col-md-9">
+                             <h2>Process</h2>
+                <h3>Team Roles and Tools</h3>
+                <p>This redesign utilized a comprehensive suite of modern tools and technologies to drive collaboration and streamline development. Visual Studio and Git played pivotal roles in efficient coding, version control, and debugging. Amazon AWS ensured robust and scalable cloud infrastructure, while Jira streamlined task management. Communication and coordination were facilitated through Slack and Microsoft Teams, fostering seamless interaction across all team members.</p>
+                <p>The team comprised approximately 20 members: three quality assurance specialists, one frontend developer, one project manager, and the remainder focused on backend development. This cross-functional team tackled the intricacies of modernizing a legacy system with iterative development cycles and consistent communication.</p>
+
+               
+
+                        </div>
+                    </div>
+         
+
+
+  <div class="row">
+                        <div class="col-md-3 how-img">
+                            <img src="images/cs7.webp" class=" img-fluid" alt=""/>
+                        </div>
+                        <div class="col-md-9">
+                            
+
+                <h3>Discovery & Research</h3>
+                <ul>
+                    <li>Conducted comprehensive stakeholder interviews with administrators, auditors, and field agents to identify inefficiencies and pain points.</li>
+                    <li>Performed user testing on the legacy system, identifying usability issues and gathering insights from PBCA (Performance-Based Contract Administrators).</li>
+                    <li>Analyzed HUD compliance documentation to ensure alignment with federal regulations, providing a foundation for system enhancements.</li>
+                </ul>
+
+                        </div>
+                    </div>
+
+         
+             <div class="row">
+                        <div class="col-md-3 how-img">
+                            <img src="images/cs8.webp" class=" img-fluid" alt=""/>
+                        </div>
+                          <div class="col">
+                <h2>Ideation & Strategy</h2>
+                <ul>
+                    <li>Created personas representing various user groups, including administrators, auditors, and field agents.</li>
+                    <li>Mapped user journeys to highlight bottlenecks and redundancies.</li>
+                    <li>Collaborated with cross-functional teams to outline priorities: automation, user-centric design, and compliance.</li>
+                </ul>
+            </div>
+                    </div>
+    <div class="row">
+                        <div class="col-md-3 how-img">
+                            <img src="images/cs9.webp" class=" img-fluid" alt=""/>
+                        </div>
+                        <div class="col">
+                <h2>Design & Development</h2>
+                <ul>
+                    <li>The development process was facilitated by Visual Studio, allowing for efficient coding and debugging.</li>
+                    <li>Amazon AWS ensured scalability and reliability for hosting the platform.</li>
+                    <li>Collaborated with the frontend developer to create a modular, responsive design system ensuring consistency across devices.</li>
+                    <li>Designed intuitive dashboards consolidating critical information, reducing cognitive load for users.</li>
+                    <li>Developed interactive prototypes in Figma and conducted iterative usability testing to refine features.</li>
+                    <li>Implemented automated workflows for tasks like contract renewal notifications and compliance tracking, minimizing manual input errors by 20%.</li>
+                </ul>
+            </div>
+                    </div>
+    <div class="row">
+                        <div class="col-md-3 how-img">
+                            <img src="images/cs10.webp" class=" img-fluid" alt=""/>
+                        </div>
+                           <div class="col">
+                <h2>Testing & Deployment</h2>
+                <ul>
+                    <li>Quality assurance specialists led rigorous testing phases, including A/B testing to evaluate and refine UI components.</li>
+                    <li>Git was utilized throughout the testing process for version control and collaboration, ensuring seamless integration of updates and fixes.</li>
+                    <li>Jira was used to track issues and manage tasks throughout the testing process.</li>
+                    <li>Worked with developers to integrate WCAG standards for accessibility, ensuring inclusive design.</li>
+                    <li>Deployed the redesigned system in iterative phases, allowing for continuous feedback and enhancements, coordinated via Slack and Microsoft Teams.</li>
+                </ul>
+            </div>
+                    </div>
+    <div class="row">
+                        <div class="col-md-3 how-img">
+                            <img src="images/cs11.webp" class=" img-fluid" alt=""/>
+                        </div>
+                      <div class="col">
+                <h2>Solution</h2>
+                <h3>Dashboard Transformation</h3>
+                <ul>
+                    <li><strong>User-Centered Dashboards:</strong> Simplified navigation with role-specific dashboards tailored to user needs, which reduced navigation errors by 15%.</li>
+                    <li><strong>Automation Features:</strong> Streamlined contract processing, reducing manual input by 20%.</li>
+                    <li><strong>Scalable Architecture:</strong> Enabled seamless handling of increased contract volumes.</li>
+                    <li><strong>HUD-Compliant Design:</strong> Ensured ongoing compliance with evolving regulations.</li>
+                    <li><strong>Enhanced Accessibility:</strong> Achieved WCAG compliance for inclusive use.</li>
+                </ul>
+                    <img src="images/cs17.png" class="img-fluid rounded m-3 p-3" alt="Case Study Image" />
+                          
+            </div>
+                    </div>
+    <div class="row">
+                        <div class="col-md-3 how-img">
+                            <img src="images/cs12.webp" class=" img-fluid" alt=""/>
+                        </div>
+                          <div class="col">
+                <h2>Results</h2>
+                <ul>
+                    <li><strong>Operational Efficiency:</strong> Improved workflow accuracy by 20%, significantly reducing processing time for critical tasks such as contract renewals.</li>
+                    <li><strong>User Satisfaction:</strong> Positive feedback from PBCA users, with a 25% reduction in reported errors.</li>
+                    <li><strong>Compliance Assurance:</strong> Simplified updates to meet HUD requirements, ensuring audit readiness.</li>
+                    <li><strong>Scalability:</strong> Supported a 30% increase in contract volume without performance degradation.</li>
+                </ul>
+            </div>
+                    </div>
+    <div class="row">
+                        <div class="col-md-3 how-img">
+                            <img src="images/cs13.webp" class=" img-fluid" alt=""/>
+                        </div>
+                         <div class="col">
+                <h2>Conclusion</h2>
+                <p>The eight-year transformation of the CATS platform showcases the power of user-centered design and strategic collaboration in addressing complex system challenges. Key achievements include enhanced operational efficiency, increased user satisfaction, and improved compliance assurance. By modernizing the platform, CGI Federal not only enhanced operational efficiency but also ensured compliance and scalability, solidifying its role as a trusted partner in affordable housing management. My role as a Design Consultant allowed me to contribute significantly to this success, leveraging expertise in UI/UX design, automation, and system scalability.</p>
+            </div>
+                    </div>
+
+
+            
+            
+
+          
+
+          
+
+        
+
+          
+
+        
+
+         
+
+        </div>
+    </section>
+
+    <section>
+        <h2>User Persona: Mark Evans</h2>
+        <div class="persona">
+            <h3>Basic Information</h3>
+            <ul>
+                <li><strong>Job Title:</strong> Contract Administrator</li>
+                <li><strong>Age:</strong> 42</li>
+                <li><strong>Marital Status:</strong> Married with one child (age 10)</li>
+                <li><strong>Income:</strong> Upper-middle-class household income</li>
+                <li><strong>Educational Background:</strong> Bachelor’s degree in Business Administration</li>
+            </ul>
+
+            <h3>Professional Journey</h3>
+            <p>Mark joined CGI Federal 15 years ago, starting as a data analyst and growing into his current role as a Contract Administrator. He handles the administration of Section 8 housing contracts, ensuring compliance with HUD regulations. Mark frequently collaborates with field agents and auditors to maintain operational efficiency.</p>
+
+            <h3>Personality Traits</h3>
+            <ul>
+                <li>Detail-oriented and methodical</li>
+                <li>Strong communication skills, particularly for liaising with stakeholders</li>
+                <li>Proactive in solving workflow inefficiencies</li>
+                <li>Thrives in structured environments</li>
+                <li>Adapts quickly to new tools and systems</li>
+            </ul>
+
+            <h3>Goals and Aspirations</h3>
+            <ul>
+                <li>Ensure seamless processing of housing contracts</li>
+                <li>Maintain compliance with HUD regulations</li>
+                <li>Reduce manual workload through automation</li>
+                <li>Collaborate effectively with colleagues for efficient task management</li>
+                <li>Stay up to date on best practices in housing administration</li>
+            </ul>
+
+            <h3>Pain Points & Challenges</h3>
+            <ul>
+                <li>Navigating complex, fragmented workflows</li>
+                <li>Managing large volumes of contracts without errors</li>
+                <li>Addressing frequent HUD updates that require system modifications</li>
+                <li>Balancing multiple responsibilities with limited time</li>
+                <li>Finding clear, consolidated data for reporting purposes</li>
+            </ul>
+
+            <h3>Software Interaction Patterns</h3>
+            <ul>
+                <li>Prefers intuitive, role-specific dashboards for streamlined task management</li>
+                <li>Relies on automated reminders for contract renewals and deadlines</li>
+                <li>Accesses operational data primarily via desktop, with occasional mobile use</li>
+                <li>Uses reporting tools to track compliance and identify workflow bottlenecks</li>
+                <li>Values features that integrate seamlessly into daily processes</li>
+            </ul>
+
+            <h3>Design Implications</h3>
+            <ul>
+                <li><strong>UX/UI Focus:</strong> Simplified navigation with task-oriented workflows</li>
+                <li><strong>Accessibility:</strong> Clear, responsive design for both desktop and mobile interfaces</li>
+                <li><strong>Features:</strong> Automated notifications, compliance tracking, and robust reporting tools</li>
+                <li><strong>Scalability:</strong> A system adaptable to future updates and increased workload</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Reflection</h2>
+        <div class="reflection">
+            <h3>Project Timeline</h3>
+            <p>This project reinforced the importance of:</p>
+            <ul>
+                <li><strong>Long-Term Vision:</strong> A phased approach ensured adaptability and continuous improvement, particularly in integrating user feedback over time.</li>
+                <li><strong>Cross-Functional Collaboration:</strong> Aligning design, development, and regulatory teams was key to success.</li>
+                <li><strong>User Feedback:</strong> Iterative testing and usability studies shaped a system that met user needs while addressing complex challenges.</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer bg-dark pt-5 pb-4 pb-lg-5" data-bs-theme="dark">
+        <div class="container pt-lg-4">
+            <p class="nav d-block fs-xs text-center  pb-2 pb-lg-0 mb-0"><span class="text-light opacity-50">&copy; All rights reserved. Portfolio of</span>
+                <img alt="JFSN" src="assets/img/me-for-website.png" width="67">
+                <a class="nav-link d-inline-block p-0" href="http://www.jfsn.com/" rel="noopener" target="_blank">Jeffrey Francis Stanley Neumann</a>
+            </p>
+        </div>
+    </footer>
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+        <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+        <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+</body>
+</html>

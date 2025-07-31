@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+     <title>jfsn.com | Contact</title>
+
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Theme switcher (color modes) -->
+
+<!-- Hotjar Tracking Code for Site 3646716 (name missing) -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3646716,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6366f1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+    <!-- Page loading styles -->
+    <style>
+        .page-loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: all .4s .2s ease-in-out;
+            transition: all .4s .2s ease-in-out;
+            background-color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+        }
+
+        [data-bs-theme="dark"] .page-loading {
+            background-color: #0b0f19;
+        }
+
+        .page-loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .page-loading-inner {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out;
+            opacity: 0;
+        }
+
+        .page-loading.active>.page-loading-inner {
+            opacity: 1;
+        }
+
+        .page-loading-inner>span {
+            display: block;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #9397ad;
+        }
+
+        [data-bs-theme="dark"] .page-loading-inner>span {
+            color: #fff;
+            opacity: .6;
+        }
+
+        .page-spinner {
+            display: inline-block;
+            width: 2.75rem;
+            height: 2.75rem;
+            margin-bottom: .75rem;
+            vertical-align: text-bottom;
+            border: .15em solid #b4b7c9;
+            border-right-color: transparent;
+            border-radius: 50%;
+            -webkit-animation: spinner .75s linear infinite;
+            animation: spinner .75s linear infinite;
+        }
+
+        [data-bs-theme="dark"] .page-spinner {
+            border-color: rgba(255, 255, 255, .4);
+            border-right-color: transparent;
+        }
+
+        @-webkit-keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        #portfolio {
+            scroll-margin-top: 75px;
+            /* Adjust the value as needed */
+        }
+
+.background-image {
+    background-image: url('assets/img/me-for-website.png'); /* Replace with your image path */
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: cover; /* This will ensure that your image covers the entire section */
+}
+
+.invert-video {
+    filter: invert(100%);
+                width: 11%;
+}
+
+ 
+     .video-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            /* Prevent wrapping */
+            overflow-x: auto;
+            /* Enable horizontal scrolling if needed */
+        }
+
+        .video {
+            flex: 0 0 auto;
+            /* Prevent videos from shrinking */
+            width: 8%;
+            /* Adjust based on the number of videos */
+            height: auto;
+            border: none;
+        }
+
+        
+
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+        (function() {
+            window.onload = function() {
+                const preloader = document.querySelector('.page-loading');
+                preloader.classList.remove('active');
+                setTimeout(function() {
+                    preloader.remove();
+                }, 1000);
+            };
+        })();
+
+    </script>
+</head>
+
+
+<!-- Body -->
+
+<body>
+
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+        <div class="page-loading-inner">
+            <div class="page-spinner"></div><span>Loading...</span>
+        </div>
+    </div>
+
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+
+     
+        <!-- Navbar -->
+        <!-- Remove "fixed-top" class to make navigation bar scrollable with the page -->
+       <header class="header navbar navbar-expand-lg bg-light shadow-sm fixed-top pt-0 pb-0">         <div class="container px-3">
+                <a href="index.html" class="navbar-brand">
+                    <span>Jeffrey F. S. Neumann</span>
+                </a>
+                 
+              
+               
+                <div id="navbarNav" class="offcanvas offcanvas-end">
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria="page">Misc.</a>
+                                <div class="dropdown-menu p-0">
+                                    <div class="d-lg-flex">
+                                        <div
+                                          class="mega-dropdown-column d-flex justify-content-center align-items-center rounded-3 rounded-end-0 px-0"
+                                          style="margin: -1px; background-color: #f3f6ff">
+                                          <picture>
+                                            <source srcset="assets/img/landings.webp" type="image/webp">
+                                            <img src="assets/img/landings.jpg" alt="Landings" />
+                                          </picture>
+                                        </div>
+                                        <div class="mega-dropdown-column pt-lg-3 pb-lg-4" style="--si-mega-dropdown-column-width: 12rem">
+                                          <ul class="list-unstyled mb-0">
+                                            <li><a href="about.html" class="dropdown-item">About Me</a></li>
+                                            <li><a href="websites.html" class="dropdown-item">Design Archives</a></li>
+                                            <li><a href="Jeff%20Neumann%20Resume.pdf" class="dropdown-item">Resume</a></li>
+                                            <li>
+                                              <a
+                                                href="old/Mr_SNOWmann/index.html"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="dropdown-item"
+                                                >Mr_SNOWmann</a
+                                              >
+                                            </li>
+                                            <li><a href="#" class="dropdown-item"></a></li>
+
+                                            <li class="dropdown-item">
+                                              Sebastian&nbsp;
+                                              <a
+                                                href="old/sebastian%20V1/sebastian.html"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="text-decoration-none"
+                                                >V1</a
+                                              >
+                                              &nbsp;&amp;&nbsp;
+                                              <a
+                                                href="old/sebastian%20V2/index.html"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="text-decoration-none"
+                                                >V2</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="nav-item dropdown">
+                                    <a href="portfolio.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Portfolio</a>
+                                    <div class="dropdown-menu">
+                                      <div class="d-lg-flex pt-lg-3">
+                                        <div class="mega-dropdown-column">
+                                          <ul class="list-unstyled mb-3">
+                                            <li><a href="portfolio.html" class="dropdown-item">My Portfolio</a></li>
+
+                                            <li>
+                                              <a href="https://showspace.so/s/jeffrey-neumann-46" class="dropdown-item py-1" target="_blank"
+                                                >Projects<span class="badge bg-success ms-2">NEW</span></a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a href="https://5k1zspyjnguz.trickle.host" class="dropdown-item py-1" target="_blank"
+                                                >Brand Brain<span class="badge bg-success ms-2">NEW</span></a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a href="studies.html" class="nav-link">Case Study</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a href="ai.html" class="nav-link">AI/UX</a>
+                                  </li>
+                                  <li class="nav-item active">
+                                    <a href="contact.html" class="nav-link">Contact</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a href="design.html" class="nav-link">Design</a>
+                                  </li>
+                                </ul>
+                    </div>
+
+                </div>
+                <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label d-none d-sm-block" for="theme-mode">Light</label>
+                    <label class="form-check-label d-none d-sm-block" for="theme-mode">Dark</label>
+                </div>
+                <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+        </header>
+
+        <!-- Hero section -->
+        <section class="position-relative bg-dark pt-lg-4 pt-xl-5" style="background: linear-gradient(90deg, #0B0F19 0%, #172033 51.04%, #0B0F19 100%);">
+            <div class="jarallax position-absolute top-0 start-0 w-100 h-100" data-jarallax data-speed="0.4">
+                <div class="jarallax-img" style="background-image: url(assets/img/landing/saas-5/hero-bg-pattern.png);"></div>
+            </div>
+            
+             <!-- Content -->
+             <div class="container position-relative zindex-2 pt-2 pt-sm-4 pt-md-5">
+<div class="row justify-content-center pt-5">
+                 <div class="col-xl-12 col-lg-7 col-md-8 col-sm-10 text-center">
+                         <h1 class="display-5 text-white pt-3 mt-3 mb-4">Let's Collaborate</h1>
+                        <p class=" fs-4 text-white opacity-80 fs-xl">For inquiries or to get a personalized quote, please feel free to reach out to me directly. Share your project details and let's explore how we can collaborate effectively.</p>
+                     
+                        </div></div>
+            </div>
+            <div class="d-none d-lg-block" style="height: 200px;"></div>
+            <div class="d-lg-none" style="height: 400px;"></div>
+            <div class="d-flex position-absolute bottom-0 start-0 w-100 overflow-hidden mb-n1" style="color: var(--si-body-bg);">
+                <div class="position-relative start-50 translate-middle-x flex-shrink-0" style="width: 3774px;">
+                    <svg width="3774" height="131" viewBox="0 0 3774 201" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 200.003C0 200.003 1137.52 0.188224 1873.5 0.000134392C2614.84 -0.189325 3774 200.003 3774 200.003H0Z" fill="currentColor" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+                <!-- Contact form -->
+                <section class="container pb-0 mb-0 mb-md-0 mb-lg-0">
+                    <div class="position-relative bg-secondary rounded-3 py-5 mb-0">
+                        <div class="row pb-2 py-md-3 py-lg-5 px-4 px-lg-0 position-relative zindex-3">
+                            <div class="col-xl-3 col-lg-4 col-md-5 offset-lg-1">
+                                <p class="lead mb-2 mb-md-3">Ready to get started?</p>
+                                <h2 class="h1 pb-3">Let's Work Together!</h2>
+                            </div>
+                            <form class="col-lg-6 col-md-7 offset-xl-1 needs-validation form-enhanced" novalidate>
+                                <div class="row">
+                                    <div class="col-sm-6 mb-4">
+                                        <div class="floating-label-group">
+                                            <input type="text" id="name" class="form-control form-control-lg" placeholder=" " required>
+                                            <label for="name" class="floating-label">Full name</label>
+                                            <div class="invalid-feedback">Please enter your name!</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-4">
+                                        <div class="floating-label-group">
+                                            <input type="email" id="email" class="form-control form-control-lg" placeholder=" " required>
+                                            <label for="email" class="floating-label">Email</label>
+                                            <div class="invalid-feedback">Please provide a valid email address!</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 pb-2 mb-4">
+                                        <div class="floating-label-group">
+                                            <textarea id="message" class="form-control form-control-lg" rows="4" placeholder=" " required></textarea>
+                                            <label for="message" class="floating-label">Message</label>
+                                            <div class="invalid-feedback">Please enter your message!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary shadow-primary btn-lg btn-floating-submit">Send request</button>
+                            </form>
+                        </div>
+
+                        <!-- Pattern -->
+                        <div class="position-absolute end-0 bottom-0 text-primary">
+                            <svg width="416" height="444" viewBox="0 0 416 444" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.08" fill-rule="evenodd" clip-rule="evenodd" d="M240.875 615.746C389.471 695.311 562.783 640.474 631.69 504.818C700.597 369.163 645.201 191.864 496.604 112.299C348.007 32.7335 174.696 87.5709 105.789 223.227C36.8815 358.882 92.278 536.18 240.875 615.746ZM208.043 680.381C388.035 776.757 605.894 713.247 694.644 538.527C783.394 363.807 709.428 144.04 529.436 47.6636C349.443 -48.7125 131.584 14.7978 42.8343 189.518C-45.916 364.238 28.0504 584.005 208.043 680.381Z" fill="currentColor" />
+                                <path opacity="0.08" fill-rule="evenodd" clip-rule="evenodd" d="M262.68 572.818C382.909 637.194 526.686 594.13 584.805 479.713C642.924 365.295 595.028 219.601 474.799 155.224C354.57 90.8479 210.793 133.912 152.674 248.33C94.5545 362.747 142.45 508.442 262.68 572.818ZM253.924 590.054C382.526 658.913 538.182 613.536 601.593 488.702C665.004 363.867 612.156 206.847 483.554 137.988C354.953 69.129 199.296 114.506 135.886 239.341C72.4752 364.175 125.323 521.195 253.924 590.054Z" fill="currentColor" />
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+
+     
+    </main>
+    <!-- Social networks (Carousel on narrow screens) -->
+      <section class="container text-center py-5 my-2 my-md-4 my-lg-5">
+     
+  <div class="swiper" data-swiper-options='{
+      "slidesPerView": 2,
+      "spaceBetween": 30,
+      "pagination": {
+        "el": ".swiper-pagination",
+        "clickable": true
+      },
+      "breakpoints": {
+        "500": {
+          "slidesPerView": 3
+        },
+        "650": {
+          "slidesPerView": 3
+        },
+        "900": {
+          "slidesPerView": 4
+        },
+        "1100": {
+          "slidesPerView": 5
+        }
+      }
+    }'>
+          <div class="swiper-wrapper">
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+              <a href="https://www.facebook.com/jeffrey.neumann1/" class="btn btn-icon btn-secondary btn-facebook btn-lg stretched-link" aria-label="Facebook" target="_blank">
+  <i class="bx bxl-facebook"></i>
+</a>
+
+                <div class="pt-4">
+                  <h6 class="mb-1">Facebook</h6>
+                  <p class="fs-sm text-muted mb-0">jeffrey.neumann1</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+         <div class="swiper-slide">
+  <div class="position-relative text-center border-end mx-n1">
+    <a href="https://showspace.so/s/jeffrey-neumann-46" class="btn btn-icon btn-secondary btn-party btn-lg stretched-link" aria-label="party" target="_blank">
+      <i class="bx bx-party fs-3"></i>
+    </a>
+    <div class="pt-4">
+      <h6 class="mb-1">Showspace</h6>
+      <p class="fs-sm text-muted mb-0">@jeffrey-neumann-46</p>
+    </div>
+  </div>
+</div>
+
+
+          
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://www.linkedin.com/in/jeffreyneumann/" class="btn btn-icon btn-secondary btn-linkedin btn-lg stretched-link" aria-label="LinkedIn" target="_blank">
+                  <i class="bx bxl-linkedin"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">LinkedIn</h6>
+                  <p class="fs-sm text-muted mb-0">jeffreyneumann/</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://www.youtube.com/@jfsneumann/videos" class="btn btn-icon btn-secondary btn-youtube btn-lg stretched-link" aria-label="Twitter" target="_blank">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">YouTube</h6>
+                  <p class="fs-sm text-muted mb-0">@jfsneumann/videos</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="position-relative text-center border-end mx-n1">
+                <a href="https://dribbble.com/JFSN" class="btn btn-icon btn-secondary btn-dribbble btn-lg stretched-link" aria-label="Dribbble" target="_blank">
+                  <i class="bx bxl-dribbble"></i>
+                </a>
+                <div class="pt-4">
+                  <h6 class="mb-1">Dribbble</h6>
+                  <p class="fs-sm text-muted mb-0">JFSN</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination (bullets) -->
+          <div class="swiper-pagination position-relative bottom-0 pt-3 mt-4"></div>
+        </div>
+      </section>
+
+    
+    
+   <footer class="footer bg-light pt-0 pb-4 pb-lg-0" data-bs-theme="light">
+    
+    </footer>
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+        <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+        <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+    <script src="assets/js/floating-labels.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+     <!-- Your JavaScript for adjusting opacity -->
+    <script>
+        function adjustOpacity() {
+            var width = window.innerWidth;
+            var mobileWidth = 600; // Width threshold for mobile screens
+            var opacity;
+
+            if (width <= mobileWidth) {
+                opacity = 1; // Fully opaque on mobile screens
+            } else {
+                // Calculate opacity based on screen width
+                // The opacity increases as the screen width decreases
+                opacity = 1 - (width - mobileWidth) / (window.outerWidth - mobileWidth);
+            }
+
+            document.querySelector('.star-icon').style.opacity = opacity;
+        }
+
+        window.addEventListener('resize', adjustOpacity);
+        adjustOpacity(); // Initial adjustment on load
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    var video = document.getElementById('myVideo');
+    video.playbackRate = 0.5; // Half speed
+});
+
+
+    </script>
+</body>
+
+</html>
